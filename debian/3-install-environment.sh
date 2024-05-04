@@ -19,6 +19,12 @@ source "$HOME/.cargo/env"
 echo 你刚安装的 Rust 版本号为： $(rustc --version)
 
 echo "==========开始安装 sdkman=========="
+sdkman_dir="$HOME/.sdkman"
+# 如果目录存在
+if [ -d "$sdkman_dir" ]; then
+    cd $HOME
+    rm -rf .sdkman		
+fi
 # 安装 sdkman 工具
 curl -s "https://get.sdkman.io" | bash
 # 启动SDKMAN
