@@ -63,8 +63,12 @@ echo $password | su -c "./install.sh" -s /bin/bash root
 cd ../
 wget -O wallpaper.jpg "https://lcqh-wallpaper.oss-cn-beijing.aliyuncs.com/backgrounds/3f878fc75ad84405bffa29a309238655.jpg"
 picture_dir="$HOME/.local/share/backgrounds"
-mkdir -p "$picture_dir"
-mv wallpaper.jpg $picture_dir
+# 如果目录不存在
+if [ ! -d "$picture_dir" ]; then
+    mkdir -p "$picture_dir"	
+fi
+# 移动壁纸图片
+mv -f wallpaper.jpg $picture_dir
 
 # 启用 User Theme 扩展插件，必须先启用该插件，GTK 主图才能解除禁用，需要在普通用户下执行
 gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
