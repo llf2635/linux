@@ -19,8 +19,7 @@ flatpak install flathub com.tencent.WeChat -y
 flatpak install flathub com.tencent.wemeet -y
 # YesPlayMusic音乐
 flatpak install flathub io.github.qier222.YesPlayMusic -y
-# 火狐，Chrome浏览器
-flatpak install flathub org.mozilla.firefox -y
+# Chrome浏览器
 flatpak install flathub com.google.Chrome -y
 # 百度网盘
 flatpak install flathub com.baidu.NetDisk -y
