@@ -3,15 +3,12 @@
 #### 介绍
 linux脚本
 
-#### 软件架构
-软件架构说明
-
-
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1.  curl -s https://gitee.com/llf2635/linux/blob/master/debian/1-basic-configuration.sh | bash
+2.  curl -s https://gitee.com/llf2635/linux/blob/master/debian/2-theme-beautify.sh | bash
+3.  curl -s https://gitee.com/llf2635/linux/blob/master/debian/3-install-environment.sh | bash
+4.  curl -s https://gitee.com/llf2635/linux/blob/master/debian/4-install-software.sh | bash
 
 #### 使用说明
 
