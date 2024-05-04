@@ -98,5 +98,6 @@ gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize
 echo "==========完成配置gnome-tweaks关键选项=========="
 
 # 清理下载的中间文件
+cd ../
 rm -rf $directory
 echo "==========桌面美化配置完成=========="
