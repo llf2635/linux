@@ -9,8 +9,8 @@ read -p "请输入你的登陆密码：" password
 
 # 更新系统
 # 在普通用户下执行管理员命令
-echo $password | su -c "apt update && apt upgrade -y" -s /bin/bash
-echo $password | su -c "apt install build-essential git vim nodejs zip curl -y" -s /bin/bash
+echo $password | su -c "apt update && apt upgrade -y" -s /bin/bash root
+echo $password | su -c "apt install build-essential git vim nodejs zip curl -y" -s /bin/bash root
 
 # 安装的 rust 自带 cargo 包管理工具
 echo "==========开始安装 Rust=========="
@@ -43,10 +43,10 @@ echo "==========开发环境安装配置完成，需要重启才能生效！！�
 # 询问用户是否立刻重启
 read -p "是否立即重启系统？(y/n): " answer
 if [[ $answer == "y" || $answer == "Y" ]]; then
-    echo $password | su -c "/usr/sbin/reboot" -s /bin/bash
+    echo $password | su -c "/usr/sbin/reboot" -s /bin/bash root
 else
     echo "已取消立即重启，但系统将在5分钟后自动重启，请保存您的工作！！！"
     # 这将在当前时间的1分钟后重启系统，并在重启前显示一条提示消息。替换 `+5` 为您想要的倒计时时间，单位为分钟。
     # sudo shutdown -r +1 "系统将在1分钟后重启，请保存您的工作。你也可以手动立即重启！！！"
-    echo $password | su -c "/usr/sbin/shutdown -r +5" -s /bin/bash
+    echo $password | su -c "/usr/sbin/shutdown -r +5" -s /bin/bash root
 fi
