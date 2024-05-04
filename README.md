@@ -15,9 +15,9 @@ Debian系统初次安装后的四个脚本，分别如下：
 4.  curl -sS https://gitee.com/llf2635/linux/blob/master/debian/4-install-software.sh | bash
 
 #### 使用说明
-1.  请使用  
+1.  请使用如下命令提前安装 curl、git 工具
 ```bash
 echo 你的登陆密码 | su -c "apt install git curl -y" -s /bin/bash root  
 ```
-提前安装 curl、git 工具
+2.  本地网络必须能够访问 Github ，否则会导致下载失败！！！
 
