@@ -1,34 +1,23 @@
 # linux
 
 #### 介绍
-linux脚本
+Debian系统初次安装后的四个脚本，分别如下：
+1.  基础配置，例如：将当前用添加到 sudo 权限组、安装指纹模组、安装 fcitx5 中文输入法、卸载所有 Gnome 自带的小游戏等
+2.  主题美化，例如：配置系统字体、光标主题、ICON主题、Shell主题、GTK主题、窗口行为和样式等
+3.  开发环境配置，例如：安装 build-essential 基础依赖包、安装vim、sdkman、Java、Maven、NodeJs、Bun等
+4.  安装常用软件，例如：Chrome浏览器、微信、QQ、百度网盘、Apifox、JetBrains-ToolBox等
 
 #### 安装教程
 
-1.  curl -s https://gitee.com/llf2635/linux/blob/master/debian/1-basic-configuration.sh | bash
-2.  curl -s https://gitee.com/llf2635/linux/blob/master/debian/2-theme-beautify.sh | bash
-3.  curl -s https://gitee.com/llf2635/linux/blob/master/debian/3-install-environment.sh | bash
-4.  curl -s https://gitee.com/llf2635/linux/blob/master/debian/4-install-software.sh | bash
+1.  curl -sS https://gitee.com/llf2635/linux/blob/master/debian/1-basic-configuration.sh | bash
+2.  curl -sS https://gitee.com/llf2635/linux/blob/master/debian/2-theme-beautify.sh | bash
+3.  curl -sS https://gitee.com/llf2635/linux/blob/master/debian/3-install-environment.sh | bash
+4.  curl -sS https://gitee.com/llf2635/linux/blob/master/debian/4-install-software.sh | bash
 
 #### 使用说明
+1.  请使用  
+```bash
+echo 你的登陆密码 | su -c "apt install git curl -y" -s /bin/bash root  
+```
+提前安装 curl、git 工具
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
