@@ -61,7 +61,7 @@ echo $password | su -c "./install.sh" -s /bin/bash root
 
 # 下载和安装壁纸
 cd ../
-wget -O wallpaper.jpg "https://lcqh-wallpaper.oss-cn-beijing.aliyuncs.com/backgrounds/3f878fc75ad84405bffa29a309238655.jpg"
+wget -O wallpaper.jpg "https://gitee.com/llf2635/linux/raw/master/debian/wallpaper/b3eb9d03e5704f619f3fe55d809568ce.jpg"
 picture_dir="$HOME/.local/share/backgrounds"
 # 如果目录不存在
 if [ ! -d "$picture_dir" ]; then
