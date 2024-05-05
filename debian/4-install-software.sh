@@ -30,7 +30,7 @@ echo "==========开始安装 jetbrains-toolbox 代码编辑器管理工具======
 # toolbox
 wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.3.1.31116.tar.gz
 # 解压缩 .tar.gz 文件
-tar -xzvf jetbrains-toolbox-2.3.1.31116.tar.gz
+tar -xvf jetbrains-toolbox-2.3.1.31116.tar.gz
 # 重命名
 mv jetbrains-toolbox-2.3.1.31116 ToolBox
 # 给AppImage文件授予可执行权限
@@ -50,13 +50,13 @@ echo $password | su -c "apt install ./$package_name -y" -s /bin/bash root
 echo "==========开始安装 virtual+vagrant 虚拟机环境=========="
 # 从官网下载 virtualbox
 package_name=virtualbox-7.0_7.0.18-162988~Debian~bookworm_amd64.deb
-curl -OJ https://download.virtualbox.org/virtualbox/7.0.18/virtualbox-7.0_7.0.18-162988~Debian~bookworm_amd64.deb
+wget https://download.virtualbox.org/virtualbox/7.0.18/virtualbox-7.0_7.0.18-162988~Debian~bookworm_amd64.deb
 echo $password | su -c "apt install vagrant ./$package_name -y" -s /bin/bash root
 
 echo "==========开始安装 WindTerm_远程连接SSH软件工具=========="
 wget https://github.com/kingToolbox/WindTerm/releases/download/2.6.0/WindTerm_2.6.1_Linux_Portable_x86_64.tar.gz
 # 解压缩 .tar.gz 文件
-tar -xzvf WindTerm_2.6.1_Linux_Portable_x86_64.tar.gz
+tar -xvf WindTerm_2.6.1_Linux_Portable_x86_64.tar.gz
 # 重命名文件夹
 mv WindTerm_2.6.1 WindTerm
 # 移动文件夹到 /opt
