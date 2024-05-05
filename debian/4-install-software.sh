@@ -37,12 +37,14 @@ mv jetbrains-toolbox-2.3.1.31116 ToolBox
 chmod +x ToolBox/jetbrains-toolbox
 # 将软件目录移动到 /opt 目录，需要管理员权限
 echo $password | su -c "mv ToolBox /opt" -s /bin/bash root
+# 执行 AppImage 文件来启动应用程序，第一次需要运行一下才能被系统识别出图标
+echo $password | su -c "/opt/ToolBox/jetbrains-toolbox" -s /bin/bash root
 
 echo "==========开始安装 Apifox 接口测试工具=========="
 # Apifox
 wget https://file-assets.apifox.com/download/Apifox-linux-deb-latest.zip
-# 解压 ZIP 压缩文件
-unzip Apifox-linux-deb-latest.zip
+# 解压 ZIP 压缩文件，使用 unzip 解压直接得到里面内容，也可以后面指定目录
+unzip Apifox-linux-deb-latest.zip -d Apifox-linux-deb-latest
 cd Apifox-linux-deb-latest
 package_name=$(ls | grep deb)
 echo $password | su -c "apt install ./$package_name -y" -s /bin/bash root
