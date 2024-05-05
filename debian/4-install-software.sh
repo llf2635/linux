@@ -70,7 +70,7 @@ echo $password | su -c "chmod +x WindTerm" -s /bin/bash root
 # 给快捷方式文件添加公共读取权限，让其能够被系统读取识别
 echo $password | su -c "chmod +r windterm.desktop" -s /bin/bash root
 # 请注意，路径中的斜杠 / 需要使用反斜杠 \ 进行转义，否则会被解释为分隔符。
-echo $password | su -c "sed -i 's/Icon=\/windterm/Icon=\/opt\/WindTerm\/windterm.png/g' windterm.desktop" -s /bin/bash root
+echo $password | su -c "sed -i 's/Icon=windterm/Icon=\/opt\/WindTerm\/windterm.png/g' windterm.desktop" -s /bin/bash root
 echo $password | su -c "sed -i 's/Exec=\/usr\/bin\/windterm/Exec=\/opt\/WindTerm\/WindTerm/g' windterm.desktop" -s /bin/bash root
 # 移动desktop文件到 /usr/share/applications
 echo $password | su -c "cp windterm.desktop /usr/share/applications" -s /bin/bash root
