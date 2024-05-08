@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
     # 配置私有网络，分配给虚拟机 IP 地址为 192.168.56.10
     master.vm.network "private_network", ip: "192.168.56.10"
     # 设置一个与主机共享的文件夹
-    master.vm.synced_folder "/webapp", "/var/www/data"
+    master.vm.synced_folder ".", "/vagrant", disabled: true
     # 配置使用 VirtualBox 提供者的虚拟机属性
     master.vm.provider "virtualbox" do |vb|
       # 在开机的时候，启用虚拟机的图形用户界面

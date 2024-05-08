@@ -39,6 +39,14 @@ chmod +x ToolBox/jetbrains-toolbox
 echo $password | su -c "mv ToolBox /opt" -s /bin/bash root
 # 执行 AppImage 文件来启动应用程序，第一次需要运行一下才能被系统识别出图标
 echo $password | su -c "/opt/ToolBox/jetbrains-toolbox" -s /bin/bash root
+echo "==========开始jetbra破解工具包=========="
+wget -O jetbra.zip https://hardbin.com/ipfs/bafybeiawsvnhqx5o2aqa37pvq7brlk7vqj2cpty3b5xac655bxbpqbpkq4/files/jetbra-ded4f9dc4fcb60294b21669dafa90330f2713ce4.zip
+# 解压 ZIP 压缩文件，使用 unzip 解压直接得到里面内容，也可以后面指定目录
+unzip jetbra.zip
+# 重命名文件夹
+mv jetbra .jetbra
+# 移动文件夹到用户主目录
+mv .jetbra $HOME
 
 echo "==========开始安装 Apifox 接口测试工具=========="
 # Apifox
