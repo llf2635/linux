@@ -7,6 +7,19 @@ echo "==========开始桌面美化配置=========="
 # 更新系统
 sudo apt update && apt upgrade -y
 
+echo "==========开始安装flatpak相关软件=========="
+# 安装并配置 flatpak
+sudo apt install git flatpak gnome-software-plugin-flatpak -y
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# 配置 flatpak 上海交大下载加速镜像仓库
+flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
+
+# 一键执行脚本，修复闪烁花屏
+sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amdgpu.dcdebugmask=0x10 amdgpu.sg_display=0"/g' /etc/default/grub
+grep "GRUB_CMDLINE_LINUX_DEFAULT" /etc/default/grub
+sudo update-grub && sudo update-grub2
+
+echo "==========开始下载并配置gtk主题=========="
 # 先创建一个主题存放目录，然后下载 WhiteSur 系统主题
 cd $HOME/下载
 directory="WhiteSur"
@@ -28,9 +41,8 @@ cd WhiteSur-gtk-theme
 sudo flatpak override --filesystem=xdg-config/gtk-4.0
 # 修改 Firefox 主题
 ./tweaks.sh -f
-# 安装 GDM 主题，登陆界面、要求 root 权限
-sudo ./tweaks.sh -g
 
+echo "==========开始下载并配置icon图标主题=========="
 # 快速安装 ICON 主题
 cd ../
 git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git --depth=1
@@ -38,6 +50,7 @@ cd WhiteSur-icon-theme
 # 安装 WhiteSur ICON 主题包
 ./install.sh -d $HOME/.icons
 
+echo "==========开始下载并配置cursors光标主题=========="
 # 快速安装 cursors 主题
 cd ../
 git clone https://github.com/vinceliuice/WhiteSur-cursors.git --depth=1
@@ -75,6 +88,8 @@ gsettings set org.gnome.desktop.interface cursor-theme 'WhiteSur-cursors'
 gsettings set org.gnome.desktop.interface icon-theme "WhiteSur-light"
 # 更改Shell主题
 gsettings set org.gnome.shell.extensions.user-theme name "WhiteSur-Light"
+gsettings set org.gnome.shell.extensions.user-theme name "Adwaita Sky"
+
 # gtk-theme 为过时应用程序主题，不是 Shell 配置项
 gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-Light"
 # 居中显示新窗口
