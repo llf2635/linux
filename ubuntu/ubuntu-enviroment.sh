@@ -1,12 +1,19 @@
 #!/bin/bash
 
-# 设置在遇到错误时自动退出
-set -e
 echo "==========开始安装配置开发环境=========="
 
 # 更新系统
-sudo apt update && apt upgrade -y
-sudo apt install build-essential git vim zip curl -y
+sudo apt update
+# 安装tuari相关的依赖，都是一些系统基础工具
+sudo apt install libwebkit2gtk-4.0-dev \
+    build-essential \
+    curl \
+    wget \
+    libssl-dev \
+    libgtk-3-dev \
+    libayatana-appindicator3-dev \
+    librsvg2-dev
+sudo apt install git nodejs vim zip neofetch -y
 
 # 安装的 rust 自带 cargo 包管理工具
 echo "==========开始安装 Rust=========="
@@ -30,6 +37,8 @@ echo 你刚安装的 sdkman 版本号为： $(sdk version)
 # 这将安装指定版本的Java。
 echo "==========开始安装 Java=========="
 sdk install java 21.0.3-graal
+sdk install java 17.0.11-graal
+sdk use java 21.0.3-graal
 # 这将安装指定版本的Maven
 echo "==========开始安装 Maven=========="
 sdk install maven 3.9.6

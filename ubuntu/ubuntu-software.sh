@@ -1,8 +1,6 @@
 #!/bin/bash
 
 echo "==========开始安装工作和娱乐常用软件工具=========="
-# 设置在遇到错误时自动退出
-set -e
 
 # 可让您一键保存当前配置（主题、图标、壁纸、所有桌面环境设置、扩展等）
 flatpak install flathub io.github.vikdevelop.SaveDesktop -y
@@ -18,6 +16,8 @@ flatpak install flathub com.github.tchx84.Flatseal -y
 # 以上软件是基本必装的常用软件
 # Obsidian 文本编辑器
 flatpak install flathub md.obsidian.Obsidian -y
+# 安装邮箱等
+sudo apt install evolution libreoffice firefox-esr -y
 
 # 下载安装非软件商城编程软件
 cd $HOME/下载
@@ -35,7 +35,7 @@ chmod +x ToolBox/jetbrains-toolbox
 # 将软件目录移动到 /opt 目录，需要管理员权限
 sudo mv ToolBox /opt
 # 安装启动 AppImage 应用所需的依赖，FUSE 库支持，必须安装
-sudo apt install libfuse2
+sudo apt install libfuse2 -y
 # 执行 AppImage 文件来启动应用程序，第一次需要运行一下才能被系统识别出图标
 /opt/ToolBox/jetbrains-toolbox
 echo "==========开始jetbra破解工具包=========="
@@ -57,10 +57,8 @@ package_name=$(ls | grep deb)
 sudo apt install ./$package_name -y
 
 echo "==========开始安装 virtual+vagrant 虚拟机环境=========="
-# 从官网下载 virtualbox
-package_name=virtualbox-7.0_7.0.18-162988~Debian~bookworm_amd64.deb
-wget https://download.virtualbox.org/virtualbox/7.0.18/virtualbox-7.0_7.0.18-162988~Debian~bookworm_amd64.deb
-sudo apt install vagrant ./$package_name -y
+# 下载 vagrant virtualbox
+sudo apt install vagrant virtualbox -y
 
 echo "==========开始安装 WindTerm_远程连接SSH软件工具=========="
 wget https://github.com/kingToolbox/WindTerm/releases/download/2.6.0/WindTerm_2.6.1_Linux_Portable_x86_64.tar.gz
