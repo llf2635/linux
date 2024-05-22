@@ -1,24 +1,5 @@
 #!/bin/bash
 
-# 设置在遇到错误时自动退出
-set -e
-
-# 配置Github访问加速
-echo "
-# GitHub Start
-20.205.243.166 github.com
-# GitHub End
-" | sudo tee -a /etc/hosts
-
-echo "==========开始安装 fcitx5 中文输入法=========="
-# 首先卸载旧版输入法，卸载与 fcitx5 冲突的所有依赖
-sudo apt remove --purge fcitx ibus -y
-# 安装fcitx5中文拼音输入法
-sudo apt install fcitx5 fcitx5-chinese-addons && sudo apt autoremove -y
-echo "==========开始安装gnome相关软件=========="
-# 下载系统基础工具，安装GNOME插件和扩展
-sudo apt install gnome-tweaks gnome-software chrome-gnome-shell gnome-shell-extension-manager -y
-
 echo "==========开始一键批量卸载snap安装软件=========="
 # 一键批量卸载snap安装软件
 for p in $(snap list | awk '{print $1}'); do  
