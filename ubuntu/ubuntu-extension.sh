@@ -32,3 +32,7 @@ kimpanel@kde.org
 dash-to-dock@micxgx.gmail.com
 gtk4-ding@smedius.gitlab.com
 drive-menu@gnome-shell-extensions.gcampax.github.com
+system-monitor@gnome-shell-extensions.gcampax.github.com
+places-menu@gnome-shell-extensions.gcampax.github.com
+apps-menu@gnome-shell-extensions.gcampax.github.com
+arcmenu@arcmenu.com
