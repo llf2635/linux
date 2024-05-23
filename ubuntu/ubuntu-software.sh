@@ -17,7 +17,7 @@ flatpak install flathub com.github.tchx84.Flatseal -y
 # Obsidian 文本编辑器
 flatpak install flathub md.obsidian.Obsidian -y
 # 安装邮箱等
-sudo apt install evolution libreoffice firefox-esr -y
+sudo apt install evolution libreoffice -y
 
 # 下载安装非软件商城编程软件
 cd $HOME/下载
