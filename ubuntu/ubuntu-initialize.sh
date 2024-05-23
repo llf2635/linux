@@ -65,6 +65,6 @@ Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 sudo apt update && sudo apt upgrade -y
 
 # 修复闪烁花屏BUG
-sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amdgpu.dcdebugmask=0x10 amdgpu.sg_display=0"/g' /etc/default/grub
+sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"/GRUB_CMDLINE_LINUX_DEFAULT="quiet splash amdgpu.dc=1 amdgpu.dcdebugmask=0x10 amdgpu.sg_display=0"/g' /etc/default/grub
 grep "GRUB_CMDLINE_LINUX_DEFAULT" /etc/default/grub
 sudo update-grub && sudo update-grub2
