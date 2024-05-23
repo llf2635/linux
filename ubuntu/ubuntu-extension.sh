@@ -43,4 +43,4 @@ ddterm@amezin.github.com
 SettingsCenter@lauinger-clan.de
 quick-settings-tweaks@qwreey
 vbox-applet@gs.eros2.info
-
+lan-ip-address@mrhuber.com
