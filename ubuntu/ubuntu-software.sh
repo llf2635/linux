@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo "==========开始安装工作和娱乐常用软件工具=========="
-
-flatpak install flathub org.mozilla.firefox -y
+# 存在闪屏BUG，使用snap版本
+# flatpak install flathub org.mozilla.firefox -y
 # 可让您一键保存当前配置（主题、图标、壁纸、所有桌面环境设置、扩展等）
 flatpak install flathub io.github.vikdevelop.SaveDesktop -y
 # 聊天、通讯
@@ -15,6 +15,8 @@ flatpak install flathub com.github.gmg137.netease-cloud-music-gtk -y
 flatpak install flathub com.baidu.NetDisk -y
 # Flatseal 是一个图形实用程序，用于查看和修改 Flatpak 应用程序的权限。
 flatpak install flathub com.github.tchx84.Flatseal -y
+# 邮箱
+flatpak install flathub org.gnome.Evolution -y
 # 以上软件是基本必装的常用软件
 # Obsidian 文本编辑器
 flatpak install flathub md.obsidian.Obsidian -y

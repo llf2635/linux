@@ -75,6 +75,20 @@ gnome-extensions enable user-theme@gnome-shell-extensions.gcampax.github.com
 
 # 在用户环境下执行的指令
 echo "==========开始配置gnome-tweaks关键选项=========="
+gsettings --help
+# 展示所有 gsettings 可配置对象，列出安装了的架构
+gsettings list-schemas
+# 查看具体某个可配置对象内部的所有可配置项的键
+gsettings list-keys org.gnome.mutter
+gsettings list-keys org.gnome.desktop.wm.preferences
+gsettings list-keys org.gnome.desktop.interface
+# gsettings 配置项属性查询模板
+gsettings get 架构[:路径] 键
+gsettings get org.gnome.desktop.interface gtk-theme
+gsettings get org.gnome.desktop.wm.preferences theme
+
+
+
 # 执行 gsettings 命令，设置背景图片
 gsettings set org.gnome.desktop.background picture-uri "file://$picture_dir/wallpaper.jpg"
 # 界⾯文本
@@ -89,12 +103,15 @@ gsettings set org.gnome.desktop.interface cursor-theme 'WhiteSur-cursors'
 gsettings set org.gnome.desktop.interface icon-theme "WhiteSur-light"
 # 更改Shell主题
 gsettings set org.gnome.shell.extensions.user-theme name "WhiteSur-Light"
-# gtk-theme 为过时应用程序主题，不是 Shell 配置项
+# 修改gtk主题，gtk-theme 为过时应用程序主题，不是 Shell 配置项
 gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-Light"
-# 居中显示新窗口
-gsettings set org.gnome.mutter center-new-windows true
+# 修改窗口主题，更改窗口管理器主题，wm.preferences 意为：窗口偏好
+gsettings set org.gnome.desktop.wm.preferences theme "WhiteSur"
 # 设置标题栏按钮，并设置在右侧
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
+# 居中显示新窗口
+gsettings set org.gnome.mutter center-new-windows true
+
 echo "==========完成配置gnome-tweaks关键选项=========="
 
 # 清理下载的中间文件
