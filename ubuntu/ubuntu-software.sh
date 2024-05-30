@@ -2,6 +2,7 @@
 
 echo "==========开始安装工作和娱乐常用软件工具=========="
 
+flatpak install flathub org.mozilla.firefox -y
 # 可让您一键保存当前配置（主题、图标、壁纸、所有桌面环境设置、扩展等）
 flatpak install flathub io.github.vikdevelop.SaveDesktop -y
 # 聊天、通讯
