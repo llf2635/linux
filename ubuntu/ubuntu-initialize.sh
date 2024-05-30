@@ -26,11 +26,14 @@ sudo apt install gnome-tweaks gnome-software gnome-shell-extensions gnome-shell-
 
 echo "==========开始安装flatpak相关软件=========="
 # 安装并配置 flatpak
-sudo apt install flatpak gnome-software-plugin-flatpak -y
+sudo apt install flatpak gnome-software-plugin-flatpak gnome-software-plugin-snap -y
 # flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 # 配置 flatpak 上海交大下载加速镜像仓库
 flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
+# 卸载 snap软件商店和默认snap火狐浏览器
+sudo snap remove snap-store firefox
+
 
 # 先安装软件源的许可密钥
 sudo apt install debian-keyring debian-archive-keyring
