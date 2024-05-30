@@ -18,7 +18,7 @@
 # gnome-extensions list	列出可安装的扩展插件
 gnome-extensions install rounded-window-corners@yilozt.shell-extension.zip
 
-
+dash-to-dock@micxgx.gmail.com
 user-theme@gnome-shell-extensions.gcampax.github.com
 compiz-alike-magic-lamp-effect@hermes83.github.com
 blur-my-shell@aunetx
@@ -43,7 +43,6 @@ quick-settings-tweaks@qwreey
 trayIconsReloaded@selfmade.pl
 no-overview@fthx
 ProxySwitcher@flannaghan.com
-# dash-to-dock@micxgx.gmail.com
 # Vitals@CoreCoding.coms
 # vbox-applet@gs.eros2.info
 # lan-ip-address@mrhuber.com
