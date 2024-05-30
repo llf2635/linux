@@ -25,22 +25,27 @@ blur-my-shell@aunetx
 hidetopbar@mathieu.bidon.ca
 just-perfection-desktop@just-perfection
 bluetooth-quick-connect@bjarosze.gmail.com
+wifiqrcode@glerro.pm.me
 status-area-horizontal-spacing@mathematical.coffee.gmail.com
 caffeine@patapon.info
 nightthemeswitcher@romainvigier.fr
 kimpanel@kde.org
-dash-to-dock@micxgx.gmail.com
 gtk4-ding@smedius.gitlab.com
 drive-menu@gnome-shell-extensions.gcampax.github.com
-Vitals@CoreCoding.coms
 places-menu@gnome-shell-extensions.gcampax.github.com
 apps-menu@gnome-shell-extensions.gcampax.github.com
 arcmenu@arcmenu.com
 clipboard-indicator@tudmotu.com
 gsconnect@andyholmes.github.io
-workspace-indicator@gnome-shell-extensions.gcampax.github.com
 ddterm@amezin.github.com
 SettingsCenter@lauinger-clan.de
 quick-settings-tweaks@qwreey
-vbox-applet@gs.eros2.info
-lan-ip-address@mrhuber.com
+trayIconsReloaded@selfmade.pl
+no-overview@fthx
+ProxySwitcher@flannaghan.com
+# dash-to-dock@micxgx.gmail.com
+# Vitals@CoreCoding.coms
+# vbox-applet@gs.eros2.info
+# lan-ip-address@mrhuber.com
+# workspace-indicator@gnome-shell-extensions.gcampax.github.com
+

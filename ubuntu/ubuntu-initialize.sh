@@ -6,6 +6,11 @@ echo "
 20.205.243.166 github.com
 # GitHub End
 " | sudo tee -a /etc/hosts
+# https://search.ecnu.cf/ 	google搜索景象	IPv4	103.150.214.192
+
+# ubuntu 系统订阅 pro
+sudo pro attach C1fNYhSKakFcaXf77wgse9XF725K6
+
 
 # echo "==========开始安装 fcitx5 中文输入法=========="
 # 首先卸载旧版输入法，卸载与 fcitx5 冲突的所有依赖
@@ -17,12 +22,13 @@ echo "
 
 echo "==========开始安装gnome相关软件=========="
 # 下载系统基础工具，安装GNOME插件和扩展
-sudo apt install gnome-tweaks gnome-software chrome-gnome-shell gnome-shell-extensions gnome-shell-extension-manager -y
+sudo apt install gnome-tweaks gnome-software gnome-shell-extensions gnome-shell-extension-manager chrome-gnome-shell -y
 
 echo "==========开始安装flatpak相关软件=========="
 # 安装并配置 flatpak
 sudo apt install flatpak gnome-software-plugin-flatpak -y
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 # 配置 flatpak 上海交大下载加速镜像仓库
 flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
 
@@ -60,6 +66,11 @@ Suites: noble-security
 Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 " | sudo tee /etc/apt/sources.list.d/ubuntu.sources
+
+# 添加 PPA 软件源
+# sudo add-apt-repository ppa:dr-akulavich/lighttable
+# sudo apt-get update
+# sudo apt-get install lighttable-installer
 
 # 更新软件源并升级软件
 sudo apt update && sudo apt upgrade -y

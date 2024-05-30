@@ -25,7 +25,9 @@ cd WhiteSur-gtk-theme
 # 修复 Flatpak gtk-4.0 应用程序
 sudo flatpak override --filesystem=xdg-config/gtk-4.0
 # 修改 Firefox 主题
+# 可以通过编辑
 ./tweaks.sh -f
+
 # 修改锁屏登陆页主题
 sudo ./tweaks.sh -g
 # 查看所有命令的作用

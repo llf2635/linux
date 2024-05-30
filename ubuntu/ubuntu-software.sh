@@ -8,7 +8,8 @@ flatpak install flathub io.github.vikdevelop.SaveDesktop -y
 flatpak install flathub com.qq.QQ -y
 flatpak install flathub com.tencent.WeChat -y
 # YesPlayMusic音乐
-flatpak install flathub io.github.qier222.YesPlayMusic -y
+# flatpak install flathub io.github.qier222.YesPlayMusic -y
+flatpak install flathub com.github.gmg137.netease-cloud-music-gtk -y
 # 百度网盘
 flatpak install flathub com.baidu.NetDisk -y
 # Flatseal 是一个图形实用程序，用于查看和修改 Flatpak 应用程序的权限。
@@ -16,8 +17,17 @@ flatpak install flathub com.github.tchx84.Flatseal -y
 # 以上软件是基本必装的常用软件
 # Obsidian 文本编辑器
 flatpak install flathub md.obsidian.Obsidian -y
-# 安装邮箱等
-sudo apt install evolution libreoffice -y
+# 管理您的待办事项任务
+flatpak install flathub io.github.mrvladus.List -y
+# 办公软件
+flatpak install flathub org.libreoffice.LibreOffice -y
+# gnome桌面火焰截图有效工作所需要的依赖
+sudo apt install xdg-desktop-portal-gnome xdg-desktop-portal
+# flameshot gui
+# 安装邮箱、办公、火焰截图、neofetch 等
+sudo apt install evolution libreoffice flameshot neofetch -y
+
+
 
 # 下载安装非软件商城编程软件
 cd $HOME/下载
