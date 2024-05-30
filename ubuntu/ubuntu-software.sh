@@ -17,6 +17,7 @@ flatpak install flathub com.github.tchx84.Flatseal -y
 # 以上软件是基本必装的常用软件
 # Obsidian 文本编辑器
 flatpak install flathub md.obsidian.Obsidian -y
+# 插件  https://flhzd5t6fl.feishu.cn/wiki/PVxTwenFdiR7JZkmtXVciAH3nwb?table=tbl8RLiBsIDt4d0i&view=vew1ZbjWVQ
 # 管理您的待办事项任务
 flatpak install flathub io.github.mrvladus.List -y
 # 办公软件
