@@ -13,7 +13,7 @@ sudo apt install libwebkit2gtk-4.0-dev \
     libgtk-3-dev \
     libayatana-appindicator3-dev \
     librsvg2-dev
-sudo apt install git nodejs vim zip neofetch -y
+sudo apt install git nodejs npm vim zip neofetch -y
 
 # 安装的 rust 自带 cargo 包管理工具
 echo "==========开始安装 Rust=========="
@@ -41,7 +41,6 @@ sdk install java 17.0.11-graal
 sdk use java 21.0.3-graal
 sdk install kotlin
 
-
 # 这将安装指定版本的Maven
 echo "==========开始安装 Maven=========="
 sdk install maven
@@ -50,7 +49,8 @@ sdk current
 
 echo "==========开始安装 Bun=========="
 # 安装 bun
-curl -fsSL https://bun.sh/install | bash
+# curl -fsSL https://bun.sh/install | bash
+npm install -g bun
 source ~/.bashrc
 echo 你刚安装的 bun 版本号为： $(bun --version)
 

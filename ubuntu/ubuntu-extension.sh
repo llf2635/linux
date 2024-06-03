@@ -26,25 +26,30 @@ hidetopbar@mathieu.bidon.ca
 just-perfection-desktop@just-perfection
 bluetooth-quick-connect@bjarosze.gmail.com
 wifiqrcode@glerro.pm.me
-status-area-horizontal-spacing@mathematical.coffee.gmail.com
 caffeine@patapon.info
 nightthemeswitcher@romainvigier.fr
 kimpanel@kde.org
-gtk4-ding@smedius.gitlab.com
 drive-menu@gnome-shell-extensions.gcampax.github.com
 places-menu@gnome-shell-extensions.gcampax.github.com
 apps-menu@gnome-shell-extensions.gcampax.github.com
 arcmenu@arcmenu.com
 clipboard-indicator@tudmotu.com
 gsconnect@andyholmes.github.io
-ddterm@amezin.github.com
 SettingsCenter@lauinger-clan.de
 quick-settings-tweaks@qwreey
 trayIconsReloaded@selfmade.pl
-no-overview@fthx
 ProxySwitcher@flannaghan.com
+debian-updates-indicator@glerro.pm.me
+quick-settings-avatar@d-go
+PrivacyMenu@stuarthayhurst
+rounded-window-corners@yilozt
+# ddterm@amezin.github.com
+# gtk4-ding@smedius.gitlab.com
+# status-area-horizontal-spacing@mathematical.coffee.gmail.com
 # Vitals@CoreCoding.coms
 # vbox-applet@gs.eros2.info
 # lan-ip-address@mrhuber.com
 # workspace-indicator@gnome-shell-extensions.gcampax.github.com
+
+# 将 扩展、优化、扩展管理器这三个打开快捷指令添加到 SettingsCenter@lauinger-clan.de 扩展配置中，以此来减少dock栏的应用
 

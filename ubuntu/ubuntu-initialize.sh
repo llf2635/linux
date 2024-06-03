@@ -22,7 +22,8 @@ sudo pro attach C1fNYhSKakFcaXf77wgse9XF725K6
 
 echo "==========开始安装gnome相关软件=========="
 # 下载系统基础工具，安装GNOME插件和扩展
-sudo apt install gnome-tweaks gnome-software gnome-shell-extensions gnome-shell-extension-manager chrome-gnome-shell -y
+gnome-shell-extensions
+sudo apt install gnome-tweaks gnome-software gnome-shell-extension-manager chrome-gnome-shell -y
 
 echo "==========开始安装flatpak相关软件=========="
 # 安装并配置 flatpak
@@ -34,9 +35,12 @@ flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
 # 卸载 snap软件商店和默认snap火狐浏览器
 sudo snap remove snap-store firefox
 
+# 目录不在由 XDG_DATA_DIRS 环境变量设置的搜索路径中，因此通过 Flatpak 安装的应用在会话重启前可能不会出现在您的桌面。该问题解决！！！
+export XDG_DATA_DIRS=$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:/home/lcqh/.local/share/flatpak/exports/share
+source $HOME/.bashrc
 
 # 先安装软件源的许可密钥
-sudo apt install debian-keyring debian-archive-keyring
+sudo apt install debian-archive-keyring
 sudo apt install apt-transport-https ca-certificates
 # 添加debian12官方软件源，并使用阿里云加速镜像仓库
 echo "
@@ -46,7 +50,6 @@ Suites: bookworm bookworm-updates bookworm-backports
 Components: main contrib non-free non-free-firmware
 Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
 
-# 以下安全更新软件源包含了官方源与镜像站配置，如有需要可自行修改注释切换
 Types: deb
 URIs: http://security.debian.org/debian-security/
 Suites: bookworm-security

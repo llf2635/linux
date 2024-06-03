@@ -8,7 +8,6 @@ echo "==========开始下载并配置gtk主题=========="
 # 先创建一个主题存放目录，然后下载 WhiteSur 系统主题
 cd $HOME/下载
 directory="WhiteSur"
-# 如果目录存在
 if [ -d "$directory" ]; then
     rm -rf "$directory"	
 fi
