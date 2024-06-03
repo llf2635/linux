@@ -1,6 +1,9 @@
 #!/bin/bash
 
 echo "==========开始安装工作和娱乐常用软件工具=========="
+# ISO 镜像写入
+flatpak install flathub com.system76.Popsicle
+
 # 存在闪屏BUG，使用snap版本
 # flatpak install flathub org.mozilla.firefox -y
 # 可让您一键保存当前配置（主题、图标、壁纸、所有桌面环境设置、扩展等）
