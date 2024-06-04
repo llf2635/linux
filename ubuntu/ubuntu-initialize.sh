@@ -11,7 +11,6 @@ echo "
 # ubuntu 系统订阅 pro
 sudo pro attach C1fNYhSKakFcaXf77wgse9XF725K6
 
-
 # echo "==========开始安装 fcitx5 中文输入法=========="
 # 首先卸载旧版输入法，卸载与 fcitx5 冲突的所有依赖
 # sudo apt remove --purge fcitx ibus -y
