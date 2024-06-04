@@ -3,19 +3,22 @@
 echo "==========开始安装配置开发环境=========="
 
 # 更新系统
-sudo apt update
+sudo pacman -Syu
 # 安装tuari相关的依赖，都是一些系统基础工具
-sudo apt install libwebkit2gtk-4.0-dev \
-    build-essential \
+sudo pacman -S --needed \
+    webkit2gtk \
+    base-devel \
     curl \
     wget \
-    libssl-dev \
-    libgtk-3-dev \
-    libayatana-appindicator3-dev \
-    librsvg2-dev
-sudo apt install git nodejs npm vim zip neofetch -y
-yay -Sy nodejs npm vim zip
+    openssl \
+    appmenu-gtk-module \
+    gtk3 \
+    libappindicator-gtk3 \
+    librsvg \
+    libvips
 
+
+yay -S nodejs npm vim zip
 # 安装的 rust 自带 cargo 包管理工具
 echo "==========开始安装 Rust=========="
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh

@@ -30,7 +30,7 @@ flatpak install flathub org.libreoffice.LibreOffice -y
 
 # watt-toolkit 的需要
 sudo chmod a+w /etc/hosts
-yay -S apifox watt-toolkit-bin flameshot jetbrains-toolbox
+yay -S apifox watt-toolkit-bin flameshot jetbrains-toolbox neofetch
 
 
 
