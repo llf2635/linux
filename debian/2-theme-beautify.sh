@@ -103,10 +103,12 @@ gsettings set org.gnome.desktop.interface cursor-theme 'WhiteSur-cursors'
 gsettings set org.gnome.desktop.interface icon-theme "WhiteSur-light"
 # 更改Shell主题
 gsettings set org.gnome.shell.extensions.user-theme name "WhiteSur-Light"
+gsettings set org.gnome.shell.extensions.user-theme name "WhiteSur-Dark"
+
 # 修改gtk主题，gtk-theme 为过时应用程序主题，不是 Shell 配置项
 gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-Light"
 # 修改窗口主题，更改窗口管理器主题，wm.preferences 意为：窗口偏好
-gsettings set org.gnome.desktop.wm.preferences theme "WhiteSur"
+gsettings set org.gnome.desktop.wm.preferences theme "WhiteSur-Dark"
 # 设置标题栏按钮，并设置在右侧
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
 # 居中显示新窗口

@@ -14,6 +14,7 @@ sudo apt install libwebkit2gtk-4.0-dev \
     libayatana-appindicator3-dev \
     librsvg2-dev
 sudo apt install git nodejs npm vim zip neofetch -y
+yay -Sy nodejs npm vim zip
 
 # 安装的 rust 自带 cargo 包管理工具
 echo "==========开始安装 Rust=========="

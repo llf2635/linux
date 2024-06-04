@@ -69,6 +69,9 @@ mv jetbra .jetbra
 # 移动文件夹到用户主目录
 mv .jetbra $HOME
 
+-javaagent:/home/lcqh/.jetbra/ja-netfilter.jar=jetbrains
+
+
 echo "==========开始安装 Apifox 接口测试工具=========="
 # Apifox
 wget https://file-assets.apifox.com/download/Apifox-linux-deb-latest.zip
@@ -80,5 +83,55 @@ sudo apt install ./$package_name -y
 
 echo "==========完成安装工作和娱乐常用软件工具=========="
 
+# https://wiki.archlinux.org/title/MariaDB
+# MariaDB 是一个可靠，高性能且功能齐全的数据库服务器，是Arch Linux默认的MySQL实现
+yay -S mariadb
+mysql --version
+/usr/bin/mariadb --version
+
+# 如果数据库（在 /var/lib/mysql 中）驻留在 Btrfs 文件系统上，则应考虑在创建任何数据库之前禁用该目录的 Copy-on-Write。
+sudo chmod -R 777 /var/lib/mysql
+# mariadb-secure-installation 命令将以交互方式指导您完成一些建议的安全措施，例如删除匿名帐户和删除测试数据库：
+sudo mariadb-secure-installation
+sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+sudo systemctl start mariadb.service
+systemctl status mariadb.service
+# 以 sudo 管理员运行则不需要密码，无需密码
+sudo mariadb
+sudo mariadb -u root -p
+show databases;
+use mysql;
+select host, user, plugin, authentication_string from user;
+ALTER USER 'root'@'localhost' IDENTIFIED BY '479368';
+
+# 需要密码
+mariadb -u root -p
 
 
+# - initialize: 默认会为 root 账户生成一个随机密码，且这个密码会过期。过期后需要重新生成一个。
+# - initialize-insecure : 不会为 root 账户生成密码。
+sudo systemctl start mysqld.service
+sudo systemctl start mariadb.service
+
+
+mysql -u root -p
+ALTER USER 'root'@'localhost' IDENTIFIED BY '479368';
+# 设置开机启动
+sudo systemctl enable mysqld.service
+cat /var/log/mysqld.log
+chmod -R 777 /var/lib/mysql
+nautilus admin:/var/lib
+
+
+
+
+yay -S redis
+redis-server --version
+sudo chmod +rw /etc/redis
+cat /etc/redis/redis.conf
+sudo vim /etc/redis/redis.conf
+requirepass 479368
+
+
+sudo systemctl restart redis
+redis-server --requirepass 479368

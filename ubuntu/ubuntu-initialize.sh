@@ -17,6 +17,7 @@ sudo pro attach C1fNYhSKakFcaXf77wgse9XF725K6
 # sudo apt remove --purge fcitx ibus -y
 # 安装fcitx5中文拼音输入法
 # sudo apt install fcitx5 fcitx5-chinese-addons && sudo apt autoremove -y
+sudo pacman -S fcitx5 fcitx5-configtool fcitx5-gtk fcitx5-chinese-addons
 # 清理无用的软件包
 # sudo apt autoremove && sudo apt autoclean -y
 
@@ -24,10 +25,11 @@ echo "==========开始安装gnome相关软件=========="
 # 下载系统基础工具，安装GNOME插件和扩展
 gnome-shell-extensions
 sudo apt install gnome-tweaks gnome-software gnome-shell-extension-manager chrome-gnome-shell -y
-
+sudo yay -Sy gnome-shell-extension-manager chrome-gnome-shell
 echo "==========开始安装flatpak相关软件=========="
 # 安装并配置 flatpak
 sudo apt install flatpak gnome-software-plugin-flatpak gnome-software-plugin-snap -y
+sudo yay -Sy flatpak gnome-software-plugin-flatpak
 # flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 # 配置 flatpak 上海交大下载加速镜像仓库

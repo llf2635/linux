@@ -53,3 +53,12 @@ rounded-window-corners@yilozt
 
 # 将 扩展、优化、扩展管理器这三个打开快捷指令添加到 SettingsCenter@lauinger-clan.de 扩展配置中，以此来减少dock栏的应用
 
+
+gnome-extensions uninstall forge@jmmaranan.com
+
+
+
+# 自动自带的系统扩展移除办法
+nautilus admin:/usr/share/gnome-shell/extensions
+
+
