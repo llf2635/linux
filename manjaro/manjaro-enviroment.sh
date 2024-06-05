@@ -17,7 +17,6 @@ sudo pacman -S --needed \
     librsvg \
     libvips
 
-
 yay -S nodejs npm vim zip
 # 安装的 rust 自带 cargo 包管理工具
 echo "==========开始安装 Rust=========="

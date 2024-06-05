@@ -16,11 +16,9 @@ flatpak install flathub com.qq.QQ -y
 flatpak install flathub com.tencent.WeChat -y
 # YesPlayMusic音乐
 # flatpak install flathub io.github.qier222.YesPlayMusic -y
-flatpak install flathub com.github.gmg137.netease-cloud-music-gtk -y
+# flatpak install flathub com.github.gmg137.netease-cloud-music-gtk -y
 # 百度网盘
 flatpak install flathub com.baidu.NetDisk -y
-# 邮箱
-flatpak install flathub org.gnome.Evolution -y
 # 以上软件是基本必装的常用软件
 # Obsidian 文本编辑器
 flatpak install flathub md.obsidian.Obsidian -y
@@ -28,11 +26,11 @@ flatpak install flathub md.obsidian.Obsidian -y
 # 办公软件
 flatpak install flathub org.libreoffice.LibreOffice -y
 
+# extra 意为 arch 官方仓库，aur 为用户仓库
 # watt-toolkit 的需要
 sudo chmod a+w /etc/hosts
-yay -S apifox watt-toolkit-bin flameshot jetbrains-toolbox neofetch
-
-
+yay -S extra/flameshot extra/neofetch extra/evolution aur/jetbrains-toolbox aur/apifox-bin aur/watt-toolkit-bin-gitee
+yay -S aur/yesplaymusic
 
 
 # 下载安装非软件商城编程软件

@@ -15,4 +15,4 @@ echo "==========开始安装gnome相关软件=========="
 # yay 包管理器不要使用  sudo
 yay -S gnome-tweaks gnome-software chrome-gnome-shell flatpak gnome-software-plugin-flatpak
 # 系统扩展目录
-nautilus admin:/usr/share/gnome-shell/extensions
+# nautilus admin:/usr/share/gnome-shell/extensions
