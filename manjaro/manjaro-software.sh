@@ -6,7 +6,7 @@ flatpak install flathub com.system76.Popsicle -y
 # Flatseal 是一个图形实用程序，用于查看和修改 Flatpak 应用程序的权限。
 flatpak install flathub com.github.tchx84.Flatseal -y
 # 扩展管理器
-flatpak install flathub com.mattjakeman.ExtensionManager -y
+# flatpak install flathub com.mattjakeman.ExtensionManager -y
 # 存在闪屏BUG，使用snap版本
 # flatpak install flathub org.mozilla.firefox -y
 # 可让您一键保存当前配置（主题、图标、壁纸、所有桌面环境设置、扩展等）
@@ -29,8 +29,11 @@ flatpak install flathub org.libreoffice.LibreOffice -y
 # extra 意为 arch 官方仓库，aur 为用户仓库
 # watt-toolkit 的需要
 sudo chmod a+w /etc/hosts
-yay -S extra/flameshot extra/neofetch extra/evolution aur/jetbrains-toolbox aur/apifox-bin aur/watt-toolkit-bin-gitee
-yay -S aur/yesplaymusic
+yay -S extra/flameshot extra/neofetch extra/evolution extra/popsicle
+yay -S extra/vagrant extra/virtualbox
+yay -S aur/jetbrains-toolbox aur/apifox-bin aur/watt-toolkit-bin-gitee
+yay -S aur/yesplaymusic aur/extension-manager aur/windterm-bin
+
 
 
 # 下载安装非软件商城编程软件

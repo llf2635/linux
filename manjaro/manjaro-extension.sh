@@ -66,11 +66,3 @@ nautilus admin:/usr/share/gnome-shell/extensions
 # 用户扩展目录
 nautilus ~/.local/share/gnome-shell/extensions
 cd ~/.local/share/gnome-shell/extensions
-# 修改对应插件的配置内容，此处以修改 SettingsCenter 插件的 Menu Label 为名称为设置中心
-cat SettingsCenter@lauinger-clan.de/schemas/org.gnome.shell.extensions.SettingsCenter.gschema.xml
-gsettings list-keys org.gnome.shell.extensions.SettingsCenter
-
-# .po文件编辑器
-yay -S extra/poedit
-# 将.mo文件转换为可编辑的.po文件。然后，您可以使用任何文本编辑器打开并修改.po文件
-msgunfmt SettingsCenter.mo -o SettingsCenter.po
