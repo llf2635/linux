@@ -58,10 +58,9 @@ order-extensions@wa4557.github.com
 display-scale-switcher@knokelmaat.gitlab.com
 rounded-window-corners@yilozt
 
-# gtk4-ding@smedius.gitlab.com
+
 # ddterm@amezin.github.com
 # gtk4-ding@smedius.gitlab.com
-# status-area-horizontal-spacing@mathematical.coffee.gmail.com
 # Vitals@CoreCoding.coms
 # vbox-applet@gs.eros2.info
 # lan-ip-address@mrhuber.com
