@@ -28,7 +28,6 @@ caffeine@patapon.info
 clipboard-indicator@tudmotu.com
 hidetopbar@mathieu.bidon.ca
 just-perfection-desktop@just-perfection
-trayIconsReloaded@selfmade.pl
 bluetooth-quick-connect@bjarosze.gmail.com
 compiz-alike-magic-lamp-effect@hermes83.github.com
 compiz-windows-effect@hermes83.github.com
@@ -50,8 +49,11 @@ auto-move-windows@gnome-shell-extensions.gcampax.github.com
 drive-menu@gnome-shell-extensions.gcampax.github.com
 places-menu@gnome-shell-extensions.gcampax.github.com
 nightthemeswitcher@romainvigier.fr
+appindicatorsupport@rgcjonas.gmail.com
+windowgestures@extension.amarullz.com
 rounded-window-corners@yilozt
 
+# trayIconsReloaded@selfmade.pl
 # ddterm@amezin.github.com
 # gtk4-ding@smedius.gitlab.com
 # status-area-horizontal-spacing@mathematical.coffee.gmail.com
@@ -74,6 +76,7 @@ gsettings list-keys org.gnome.shell.extensions.SettingsCenter
 # .po文件编辑器
 yay -S extra/poedit
 # 将.mo文件转换为可编辑的.po文件。然后，您可以使用任何文本编辑器打开并修改.po文件。po文件为汉化模板文件
+msgunfmt hidetopbar.mo -o hidetopbar.po
 msgunfmt SettingsCenter.mo -o SettingsCenter.po
 msgunfmt PrivacyMenu@stuarthayhurst.mo -o PrivacyMenu@stuarthayhurst.po
 

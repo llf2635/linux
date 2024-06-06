@@ -42,7 +42,7 @@ arcmenu@arcmenu.com
 custom-accent-colors@demiskp
 dash-to-dock@micxgx.gmail.com
 gsconnect@andyholmes.github.io
-gtk4-ding@smedius.gitlab.com
+ding@rastersoft.com
 pamac-updates@manjaro.org
 space-bar@luchrioh
 apps-menu@gnome-shell-extensions.gcampax.github.com
@@ -50,8 +50,15 @@ auto-move-windows@gnome-shell-extensions.gcampax.github.com
 drive-menu@gnome-shell-extensions.gcampax.github.com
 places-menu@gnome-shell-extensions.gcampax.github.com
 nightthemeswitcher@romainvigier.fr
+add-to-desktop@tommimon.github.com
+Bluetooth-Battery-Meter@maniacx.github.com
+# 农历
+lunarcal@ailin.nemui
+order-extensions@wa4557.github.com
+display-scale-switcher@knokelmaat.gitlab.com
 rounded-window-corners@yilozt
 
+# gtk4-ding@smedius.gitlab.com
 # ddterm@amezin.github.com
 # gtk4-ding@smedius.gitlab.com
 # status-area-horizontal-spacing@mathematical.coffee.gmail.com
@@ -66,3 +73,7 @@ nautilus admin:/usr/share/gnome-shell/extensions
 # 用户扩展目录
 nautilus ~/.local/share/gnome-shell/extensions
 cd ~/.local/share/gnome-shell/extensions
+
+# 开启分数缩放
+gsettings get org.gnome.mutter experimental-features
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
