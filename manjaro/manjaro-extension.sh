@@ -52,10 +52,18 @@ places-menu@gnome-shell-extensions.gcampax.github.com
 nightthemeswitcher@romainvigier.fr
 add-to-desktop@tommimon.github.com
 Bluetooth-Battery-Meter@maniacx.github.com
+windowgestures@extension.amarullz.com
 # 农历
 lunarcal@ailin.nemui
 order-extensions@wa4557.github.com
 display-scale-switcher@knokelmaat.gitlab.com
+randomwallpaper@iflow.space
+color-picker@tuberry
+search-light@icedman.github.com
+notification-banner-reloaded@marcinjakubowski.github.com
+gnomebedtime@ionutbortis.gmail.com
+ShutdownTimer@deminder
+gnome-ui-tune@itstime.tech
 rounded-window-corners@yilozt
 
 
@@ -76,3 +84,16 @@ cd ~/.local/share/gnome-shell/extensions
 # 开启分数缩放
 gsettings get org.gnome.mutter experimental-features
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+
+# .po文件编辑器
+yay -S extra/poedit
+# 将.mo文件转换为可编辑的.po文件。然后，您可以使用任何文本编辑器打开并修改.po文件。po文件为汉化模板文件
+msgunfmt hidetopbar.mo -o hidetopbar.po
+msgunfmt SettingsCenter.mo -o SettingsCenter.po
+msgunfmt PrivacyMenu@stuarthayhurst.mo -o PrivacyMenu@stuarthayhurst.po
+
+# 只需要将汉化文件添加到对应插件的 locale 国际化目录下即可。具体步骤如下：
+1、首先随便在插件中选择一门国际化目录，然后将国际化文件转成可编辑的po模板文件，再使用上面安装的 poedit 打开，
+2、然后点击 toolbar 中的 翻译/属性将其中的语言改成	中文（简体）
+3、然后对汉化模板 po 文件的每一项进行翻译，保存
+4、然后将 zh_CN 目录复制到对应插件的 locale 国际化目录

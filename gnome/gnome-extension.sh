@@ -28,6 +28,7 @@ caffeine@patapon.info
 clipboard-indicator@tudmotu.com
 hidetopbar@mathieu.bidon.ca
 just-perfection-desktop@just-perfection
+trayIconsReloaded@selfmade.pl
 bluetooth-quick-connect@bjarosze.gmail.com
 compiz-alike-magic-lamp-effect@hermes83.github.com
 compiz-windows-effect@hermes83.github.com
@@ -41,7 +42,7 @@ arcmenu@arcmenu.com
 custom-accent-colors@demiskp
 dash-to-dock@micxgx.gmail.com
 gsconnect@andyholmes.github.io
-gtk4-ding@smedius.gitlab.com
+ding@rastersoft.com
 pamac-updates@manjaro.org
 space-bar@luchrioh
 apps-menu@gnome-shell-extensions.gcampax.github.com
@@ -49,14 +50,25 @@ auto-move-windows@gnome-shell-extensions.gcampax.github.com
 drive-menu@gnome-shell-extensions.gcampax.github.com
 places-menu@gnome-shell-extensions.gcampax.github.com
 nightthemeswitcher@romainvigier.fr
-appindicatorsupport@rgcjonas.gmail.com
+add-to-desktop@tommimon.github.com
+Bluetooth-Battery-Meter@maniacx.github.com
 windowgestures@extension.amarullz.com
+# 农历
+lunarcal@ailin.nemui
+order-extensions@wa4557.github.com
+display-scale-switcher@knokelmaat.gitlab.com
+randomwallpaper@iflow.space
+color-picker@tuberry
+search-light@icedman.github.com
+notification-banner-reloaded@marcinjakubowski.github.com
+gnomebedtime@ionutbortis.gmail.com
+ShutdownTimer@deminder
+gnome-ui-tune@itstime.tech
 rounded-window-corners@yilozt
 
-# trayIconsReloaded@selfmade.pl
+
 # ddterm@amezin.github.com
 # gtk4-ding@smedius.gitlab.com
-# status-area-horizontal-spacing@mathematical.coffee.gmail.com
 # Vitals@CoreCoding.coms
 # vbox-applet@gs.eros2.info
 # lan-ip-address@mrhuber.com
@@ -67,11 +79,11 @@ rounded-window-corners@yilozt
 nautilus admin:/usr/share/gnome-shell/extensions
 # 用户扩展目录
 nautilus ~/.local/share/gnome-shell/extensions
-
 cd ~/.local/share/gnome-shell/extensions
-# 修改对应插件的配置内容，此处以修改 SettingsCenter 插件的 Menu Label 为名称为设置中心
-cat SettingsCenter@lauinger-clan.de/schemas/org.gnome.shell.extensions.SettingsCenter.gschema.xml
-gsettings list-keys org.gnome.shell.extensions.SettingsCenter
+
+# 开启分数缩放
+gsettings get org.gnome.mutter experimental-features
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 
 # .po文件编辑器
 yay -S extra/poedit
