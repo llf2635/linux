@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # gnome-extensions 直接使用可以查看扩展的所有命令的作用
+# gnome-extensions官网：https://gjs.guide/extensions/
 # help      打印帮助
 # version   打印版本
 # enable    启用扩展
@@ -12,6 +13,31 @@
 # show      显示扩展信息
 # prefs     打开扩展首选项
 # create    创建扩展
+gnome-extensions create --help
+gnome-extensions: UUID、名称和描述都是必需的
+用法：
+  gnome-extensions create [选项…]
+创建新扩展
+应用程序选项：
+  --uuid=UUID                   新扩展的唯一标识符
+  --name=名称                		新扩展的用户可见名称
+  --description=描述         		扩展功能的简短描述
+  --gettext-domain=域        	扩展使用的 gettext 域
+  --settings-schema=架构     	扩展使用的 GSettings 方案
+  --template=模板            		新扩展使用的模板
+  --prefs                    	包括 prefs.js 模版
+  -i, --interactive          	以交互方式输入扩展信息
+  -q, --quiet                	不要打印错误信息
+要使用完整的`gnome-extensions create`命令创建一个GNOME扩展插件，你需要在终端中执行以下命令：
+gnome-extensions create --name="window-rounded-corners" --description="My first GNOME extension" --uuid="2320391937@qq.com"
+
+# 以交互方式创建扩展并输入扩展信息
+gnome-extensions create --interactive
+这条命令将会创建一个名称为"MyFirstExtension"，描述为"My first GNOME extension"，UUID为"myfirstextension@yourdomain.com"
+# 以上创建的自定义gnome扩展默认存放在 ~/.local/share/gnome-shell/extensions 目录
+nautilus ~/.local/share/gnome-shell/extensions
+
+
 # pack      打包扩展
 # install   安装扩展包
 # gnome-extensions help

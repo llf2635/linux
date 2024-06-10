@@ -97,3 +97,4 @@ msgunfmt PrivacyMenu@stuarthayhurst.mo -o PrivacyMenu@stuarthayhurst.po
 2、然后点击 toolbar 中的 翻译/属性将其中的语言改成	中文（简体）
 3、然后对汉化模板 po 文件的每一项进行翻译，保存
 4、然后将 zh_CN 目录复制到对应插件的 locale 国际化目录
+

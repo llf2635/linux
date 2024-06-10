@@ -7,8 +7,10 @@ git config --global user.email "2320391937@qq.com"
 ssh-keygen -t rsa -b 4096 -C "2320391937@qq.com"
 cat ~/.ssh/id_rsa.pub
 
-sudo pacman -R fcitx ibus
-sudo pacman -S fcitx5 fcitx5-configtool fcitx5-gtk fcitx5-chinese-addons
+# 参考：https://www.cnblogs.com/fatalord/p/13850072.html
+sudo pacman -Rns fcitx ibus
+sudo pacman -Rs $(pacman -Qsq fcitx)
+sudo pacman -S fcitx5 fcitx5-configtool fcitx5-qt fcitx5-gtk fcitx5-chinese-addons fcitx5-material-color
 
 echo "==========开始安装gnome相关软件=========="
 # 下载系统基础工具，安装GNOME插件和扩展, gnome-shell-extensions
