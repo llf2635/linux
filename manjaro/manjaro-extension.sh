@@ -33,9 +33,18 @@ gnome-extensions create --name="window-rounded-corners" --description="My first 
 
 # 以交互方式创建扩展并输入扩展信息
 gnome-extensions create --interactive
+window-rounded-corners
+Style all gnome windows with rounded corners
+window-rounded-corners@llf.yyds.com
+
+
 这条命令将会创建一个名称为"MyFirstExtension"，描述为"My first GNOME extension"，UUID为"myfirstextension@yourdomain.com"
 # 以上创建的自定义gnome扩展默认存放在 ~/.local/share/gnome-shell/extensions 目录
 nautilus ~/.local/share/gnome-shell/extensions
+
+圆角窗口参考项目：https://github.com/yilozt/rounded-window-corners
+
+
 
 
 # pack      打包扩展

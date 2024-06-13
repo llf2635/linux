@@ -10,7 +10,9 @@ cat ~/.ssh/id_rsa.pub
 # 参考：https://www.cnblogs.com/fatalord/p/13850072.html
 sudo pacman -Rns fcitx ibus
 sudo pacman -Rs $(pacman -Qsq fcitx)
-sudo pacman -S fcitx5 fcitx5-configtool fcitx5-qt fcitx5-gtk fcitx5-chinese-addons fcitx5-material-color
+# 参考官方文档： https://wiki.archlinuxcn.org/wzh/index.php?title=Fcitx5#%E4%B8%AD%E6%96%87
+sudo pacman -S fcitx5 fcitx5-configtool fcitx5-qt fcitx5-gtk fcitx5-chinese-addons fcitx5-material-color fcitx5-input-support
+
 
 echo "==========开始安装gnome相关软件=========="
 # 下载系统基础工具，安装GNOME插件和扩展, gnome-shell-extensions
