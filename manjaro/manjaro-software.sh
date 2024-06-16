@@ -32,7 +32,7 @@ sudo chmod a+w /etc/hosts
 yay -S extra/flameshot extra/neofetch extra/evolution extra/popsicle
 yay -S extra/vagrant extra/virtualbox
 yay -S aur/jetbrains-toolbox aur/apifox-bin aur/watt-toolkit-bin-gitee
-yay -S aur/yesplaymusic aur/extension-manager aur/windterm-bin
+yay -S aur/yesplaymusic aur/extension-manager aur/windterm-bin tabby-bin
 
 
 
