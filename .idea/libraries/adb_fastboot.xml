@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="adb-fastboot">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/android/adb-fastboot.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
