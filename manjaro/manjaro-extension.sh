@@ -57,13 +57,14 @@ nautilus ~/.local/share/gnome-shell/extensions
 
 
 # 以下是必装和推荐安装的扩展插件
+Rounded_Corners@lennart-k
+rounded-window-corners@fxgn
 SettingsCenter@lauinger-clan.de
 blur-my-shell@aunetx
 caffeine@patapon.info
 clipboard-indicator@tudmotu.com
 hidetopbar@mathieu.bidon.ca
 just-perfection-desktop@just-perfection
-trayIconsReloaded@selfmade.pl
 bluetooth-quick-connect@bjarosze.gmail.com
 compiz-alike-magic-lamp-effect@hermes83.github.com
 compiz-windows-effect@hermes83.github.com
@@ -88,20 +89,27 @@ nightthemeswitcher@romainvigier.fr
 add-to-desktop@tommimon.github.com
 Bluetooth-Battery-Meter@maniacx.github.com
 windowgestures@extension.amarullz.com
-# 农历
-lunarcal@ailin.nemui
 order-extensions@wa4557.github.com
 display-scale-switcher@knokelmaat.gitlab.com
 randomwallpaper@iflow.space
 color-picker@tuberry
-search-light@icedman.github.com
-notification-banner-reloaded@marcinjakubowski.github.com
 gnomebedtime@ionutbortis.gmail.com
 ShutdownTimer@deminder
 gnome-ui-tune@itstime.tech
-rounded-window-corners@yilozt
+# 根据自己的喜好配置通知横幅位置和动画。
+notification-banner-reloaded@marcinjakubowski.github.com
+# 将应用图标托盘带回顶部面板，并具有附加功能。
+trayIconsReloaded@selfmade.pl
+# 在网格上平铺窗口
+gTile@vibou
+# 将应用程序搜索从概述中移除。全局搜索框，类似：search-everything
+search-light@icedman.github.com
+# 农历
+lunarcal@ailin.nemui
 
 
+
+# rounded-window-corners@yilozt
 # ddterm@amezin.github.com
 # gtk4-ding@smedius.gitlab.com
 # Vitals@CoreCoding.coms
