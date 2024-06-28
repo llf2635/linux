@@ -102,6 +102,8 @@ notification-banner-reloaded@marcinjakubowski.github.com
 trayIconsReloaded@selfmade.pl
 # 在网格上平铺窗口
 gTile@vibou
+# 使用键盘快捷键平铺窗口。
+awesome-tiles@velitasali.com
 # 将应用程序搜索从概述中移除。全局搜索框，类似：search-everything
 search-light@icedman.github.com
 # 农历
