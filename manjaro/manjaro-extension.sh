@@ -142,3 +142,29 @@ msgunfmt PrivacyMenu@stuarthayhurst.mo -o PrivacyMenu@stuarthayhurst.po
 2、然后点击 toolbar 中的 翻译/属性将其中的语言改成	中文（简体）
 3、然后对汉化模板 po 文件的每一项进行翻译，保存
 4、然后将 zh_CN 目录复制到对应插件的 locale 国际化目录
+
+
+# 建议直接等插件对应版本更新
+# GNOME有没有类似于macOS中应用程序菜单（如文件、编辑、视图等）集成到顶部Panel或全局菜单栏的功能，让 Manjaro 拥有Mac的全局菜单
+参看网站： https://blog.csdn.net/YV_LING/article/details/128270852
+Github工具网址： https://github.com/gonzaarcr/Fildem
+用户改造版本： https://github.com/Sominemo/Fildem-Gnome-45
+gnome扩展名称但目前还没有版本适配： fildem-global-menu
+
+下载安装
+https://github.com/gonzaarcr/Fildem/releases
+sudo pacman -U ./python3-fildem*.zst
+
+
+
+
+# FIldem-Menu-Gnome-46 使用配置参考
+https://github.com/AndreaScerra/FIldem-Menu-Gnome-46
+# 创建或编辑如下文件，并添加该配置项	gtk-modules="appmenu-gtk-module"
+~/.gtkrc-2.0
+
+# 创建或编辑如下文件
+~/.config/gtk-3.0/settings.ini
+# 添加如下内容
+[Settings]
+gtk-modules="appmenu-gtk-module"

@@ -28,10 +28,13 @@ flatpak install flathub org.libreoffice.LibreOffice -y
 
 # extra 意为 arch 官方仓库，aur 为用户仓库
 # watt-toolkit 的需要
+# extra/flameshot 无法使用
 sudo chmod a+w /etc/hosts
-yay -S extra/flameshot extra/neofetch extra/evolution extra/popsicle
+yay -S extra/neofetch extra/evolution extra/popsicle
+evolution配置qq邮箱授权码： embwnsuwkdjrebge
+
 yay -S extra/vagrant extra/virtualbox
-yay -S aur/jetbrains-toolbox aur/apifox-bin aur/watt-toolkit-bin-gitee
+yay -S aur/jetbrains-toolbox aur/apifox-bin aur/watt-toolkit-bin aur/switchhosts
 yay -S aur/yesplaymusic aur/extension-manager aur/windterm-bin tabby-bin
 
 
