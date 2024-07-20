@@ -110,7 +110,7 @@ search-light@icedman.github.com
 lunarcal@ailin.nemui
 
 
-
+# dash2dock-lite@icedman.github.com
 # rounded-window-corners@yilozt
 # ddterm@amezin.github.com
 # gtk4-ding@smedius.gitlab.com
@@ -168,3 +168,16 @@ https://github.com/AndreaScerra/FIldem-Menu-Gnome-46
 # 添加如下内容
 [Settings]
 gtk-modules="appmenu-gtk-module"
+
+
+
+# Night Theme Switcher 扩展插件配置
+# 白天执行命令
+gsettings set org.gnome.desktop.interface icon-theme "WhiteSur-light"
+gsettings set org.gnome.shell.extensions.user-theme name "WhiteSur-Light"
+gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-Light"
+
+# 夜晚执行命令
+gsettings set org.gnome.desktop.interface icon-theme "WhiteSur-dark"
+gsettings set org.gnome.shell.extensions.user-theme name "WhiteSur-Dark"
+gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-Dark"

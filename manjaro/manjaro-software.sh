@@ -34,7 +34,7 @@ yay -S extra/neofetch extra/evolution extra/popsicle
 evolution配置qq邮箱授权码： embwnsuwkdjrebge
 
 yay -S extra/vagrant extra/virtualbox
-yay -S aur/jetbrains-toolbox aur/apifox-bin aur/watt-toolkit-bin aur/switchhosts
+yay -S aur/jetbrains-toolbox aur/apifox-bin aur/watt-toolkit-bin aur/switchhosts-bin
 yay -S aur/yesplaymusic aur/extension-manager aur/windterm-bin tabby-bin
 
 

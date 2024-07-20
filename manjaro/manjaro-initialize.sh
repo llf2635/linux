@@ -20,3 +20,18 @@ echo "==========开始安装gnome相关软件=========="
 yay -S gnome-tweaks gnome-software chrome-gnome-shell flatpak gnome-software-plugin-flatpak
 # 系统扩展目录
 # nautilus admin:/usr/share/gnome-shell/extensions
+
+# 网站国内可用 DNS 测试 ping 	https://ping.chinaz.com/www.youtube.com
+# 配置Github访问加速
+echo "
+# GitHub Start
+20.205.243.166     github.com
+185.199.109.133    raw.githubusercontent.com
+# GitHub End
+" | sudo tee -a /etc/hosts
+
+cat /etc/hosts
+
+
+
+
