@@ -34,31 +34,10 @@ yay -S extra/neofetch extra/evolution extra/popsicle
 evolution配置qq邮箱授权码： embwnsuwkdjrebge
 
 yay -S extra/vagrant extra/virtualbox
-yay -S aur/jetbrains-toolbox aur/apifox-bin aur/watt-toolkit-bin aur/switchhosts-bin
+yay -S aur/jetbrains-toolbox aur/apifox aur/watt-toolkit-bin aur/switchhosts-bin
 yay -S aur/yesplaymusic aur/extension-manager aur/windterm-bin tabby-bin
 
 
-
-# 下载安装非软件商城编程软件
-# https://www.jetbrains.com.cn/toolbox-app/
-cd $HOME/下载
-echo "==========开始安装 jetbrains-toolbox 代码编辑器管理工具=========="
-# -O 选项指示curl将下载的文件保存为与远程文件相同的文件名，为大写字母
-# 使用`-OJ`选项参数后，`curl`会从URL中提取文件名，并将其用作保存文件的名称。
-# toolbox
-wget https://download.jetbrains.com/toolbox/jetbrains-toolbox-2.3.1.31116.tar.gz
-# 解压缩 .tar.gz 文件
-tar -xvf jetbrains-toolbox-2.3.1.31116.tar.gz
-# 重命名
-mv jetbrains-toolbox-2.3.1.31116 ToolBox
-# 给AppImage文件授予可执行权限
-chmod +x ToolBox/jetbrains-toolbox
-# 将软件目录移动到 /opt 目录，需要管理员权限
-sudo mv ToolBox /opt
-# 安装启动 AppImage 应用所需的依赖，FUSE 库支持，必须安装
-sudo apt install libfuse2 -y
-# 执行 AppImage 文件来启动应用程序，第一次需要运行一下才能被系统识别出图标
-/opt/ToolBox/jetbrains-toolbox
 echo "==========开始jetbra破解工具包=========="
 wget -O jetbra.zip https://hardbin.com/ipfs/bafybeiawsvnhqx5o2aqa37pvq7brlk7vqj2cpty3b5xac655bxbpqbpkq4/files/jetbra-ded4f9dc4fcb60294b21669dafa90330f2713ce4.zip
 # 解压 ZIP 压缩文件，使用 unzip 解压直接得到里面内容，也可以后面指定目录
@@ -70,15 +49,6 @@ mv .jetbra $HOME
 
 -javaagent:/home/lcqh/.jetbra/ja-netfilter.jar=jetbrains
 
-
-echo "==========开始安装 Apifox 接口测试工具=========="
-# Apifox
-wget https://file-assets.apifox.com/download/Apifox-linux-deb-latest.zip
-# 解压 ZIP 压缩文件，使用 unzip 解压直接得到里面内容，也可以后面指定目录
-unzip Apifox-linux-deb-latest.zip -d Apifox-linux-deb-latest
-cd Apifox-linux-deb-latest
-package_name=$(ls | grep deb)
-sudo apt install ./$package_name -y
 
 echo "==========完成安装工作和娱乐常用软件工具=========="
 
@@ -94,6 +64,7 @@ sudo chmod -R 777 /var/lib/mysql
 sudo mariadb-secure-installation
 sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 sudo systemctl start mariadb.service
+sudo systemctl enable mariadb.service
 systemctl status mariadb.service
 # 以 sudo 管理员运行则不需要密码，无需密码
 sudo mariadb
@@ -133,4 +104,5 @@ requirepass 479368
 
 
 sudo systemctl restart redis
+sudo systemctl enable redis
 redis-server --requirepass 479368

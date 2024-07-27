@@ -1,0 +1,177 @@
+{
+  // 应用名称
+  "productName": "tauri2-app",
+  // 应用版本
+  "version": "0.1.0",
+  // 采用反向域名表示法 （例如 com.tauri.example） 的应用程序标识符
+  "identifier": "com.tauri.dev",
+  // 应用构建配置
+  "build": {
+    // 在 tauri dev 启动之前运行的 shell 命令
+    "beforeDevCommand": "bun run dev",
+    // 在 tauri build 构建开始之前运行的 shell 命令
+    "beforeBuildCommand": "bun run build",
+    // 要在开发中加载的 URL
+    "devUrl": "http://localhost:1420",
+    // 前端构建目录。默认情况下，它将加载 dist 目录
+    "frontendDist": "../dist"
+  },
+  // 应用配置，以下都是官方默认值
+  "app": {
+    // MacOS 私有 API 配置。如果为 true，则启用透明后台 API，并将 fullScreenEnabled 首选项设置为 true
+    "macOSPrivateApi": false,
+    // 应用安全配置，以下都是默认值
+    "security": {
+      // 将注入到已构建应用程序上的所有 HTML 文件的内容安全策略。如果未指定dev_csp，则此值也会注入 dev
+      "csp": null,
+      // 自定义协议配置。如果启用，则可以指定自定义协议的处理程序
+      "assetProtocol": {
+        "enable": false,
+        "scope": []
+      },
+      "capabilities": [],
+      "dangerousDisableAssetCspModification": false,
+      "freezePrototype": false,
+      "pattern": {
+        "use": "brownfield"
+      }
+    },
+    // 应用程序托盘图标的配置
+    "trayIcon": {
+      // 用于确定图像是否表示 macOS 上的模板图像
+      "iconAsTemplate": false,
+      // 用于托盘图标的默认图标的路径
+      "iconPath": "icon.png",
+      // 为此托盘图标设置一个 ID，以便您以后可以引用它，默认为 main
+      "id": "main",
+      // 该值确定在 macOS 上左键单击托盘图标时是否应显示菜单,默认为 true
+      "menuOnLeftClick": true,
+      // MacOS 托盘的标题
+      "title": "Tauri App",
+      // Windows 和 macOS 上的托盘图标工具提示
+      "tooltip": "Tauri App"
+    },
+    // 应用窗口配置
+    "windows": [{
+      // 窗口标识符。它必须是字母数字，默认值为 main
+      "label": "main",
+      // 默认窗口的宽度，按照 16:9 宽高比例配置
+      "width": 1200,
+      // 默认窗口的高度
+      "height": 750,
+      // 窗口的最小宽度
+      "minWidth": 960,
+      // 窗口的最小高度
+      "minHeight": 600,
+      // 窗口是否居中启动
+      "center": true,
+      // 窗口是否有阴影，默认为 true
+      "shadow": true,
+      // 窗口标题
+      "title": "tauri2-app",
+      // 窗口是否显示边框和标题栏，默认为 true
+      "decorations": true,
+      // 窗口是否可透明，默认为 false
+      "transparent": false,
+      // 窗口效果。要求窗口是透明的 (transparent: true)
+      "windowEffects": {
+        // 要应用于窗口的窗口效果列表
+        "effects": []
+      }
+    }],
+    // 我们是否应该在window.__TAURI__上注入 Tauri API
+    "withGlobalTauri": false
+  },
+  // tauri-bundler 安装包捆绑配置
+  "bundle": {
+    // Tauri 是否捆绑您的应用程序还是只输出可执行文件
+    "active": false,
+    // 捆绑包目标平台。目前支持 [“deb”， “rpm”， “appimage”， “nsis”， “msi”， “app”， “dmg”， “updater”] 或 “all”。
+    "targets": "all",
+    // 应用程序的发布者
+    "publisher": "龙茶清欢",
+    // 应用程序类型, 例如  实用程序，视频， 天气，游戏等
+    "category": "实用程序",
+    // 与应用程序关联的版权字符串
+    "copyright": "Copyright © 2022-2023 龙茶清欢",
+    // 要包含在相应捆绑包中的软件包的许可证标识符。如果未设置，则默认为 Cargo.toml 文件中的许可证
+    "license": "MIT",
+    // 要包含在相应捆绑包中的许可证文件的路径
+    "licenseFile": "./license",
+    // 应用程序的短描述
+    "shortDescription": "Tauri App is a demo application built with Tauri.",
+    // 应用程序的长描述
+    "longDescription": "Tauri App is a demo application built with Tauri.",
+    // 要捆绑的应用资源。每个资源都是文件或目录的路径。支持 Glob 模式
+    "resources": [],
+    // 应用程序的图标
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    // Android 系统安装包常规配置
+    "android": {
+      // Android 应用程序运行所需的最低 API 级别。如果系统的 API 级别低于指定的值，Android 系统将阻止用户安装应用程序
+      "minSdkVersion": 24
+    },
+    // iOS 系统安装包常规配置
+    "iOS": {},
+    // Linux 系统安装包常规配置，以下都是官方默认配置值
+    "linux": {
+      // AppImage 捆绑包的配置
+      "appimage": {
+        "bundleMediaFramework": false,
+        "files": {}
+      },
+      "deb": {
+        "files": {}
+      },
+      "rpm": {
+        "epoch": 0,
+        "files": {},
+        "release": "1"
+      }
+    },
+    // macOS 系统安装包常规配置，以下都是官方默认配置值
+    "macOS": {
+      "dmg": {
+        "appPosition": {
+          "x": 180,
+          "y": 170
+        },
+        "applicationFolderPosition": {
+          "x": 480,
+          "y": 170
+        },
+        "windowSize": {
+          "height": 400,
+          "width": 660
+        }
+      },
+      "files": {},
+      // 捆绑应用程序支持的最低 macOS X 版本。默认值为 10.13。
+      "minimumSystemVersion": "10.13"
+    },
+    // Windows 系统安装包常规配置, 以下都是官方默认配置值
+    "windows": {
+      "allowDowngrades": true,
+      "certificateThumbprint": null,
+      "digestAlgorithm": null,
+      "nsis": null,
+      "timestampUrl": null,
+      "tsp": false,
+      "webviewFixedRuntimePath": null,
+      // Webview2 运行时的安装模式
+      "webviewInstallMode": {
+        "silent": true,
+        "type": "downloadBootstrapper"
+      },
+      "wix": null
+    }
+  },
+  // 插件配置
+  "plugins": {}
+}
