@@ -1,0 +1,22 @@
+# 强制更新系统，包括所有可更新软件和操作系统内核
+sudo pacman -Syyu
+# 安装 yay 包管理器，方便安装 aur 中的软件包
+sudo pacman -S yay
+# 列出未被任何已安装软件包依赖的包（即孤儿包）
+yay -Qdtq
+# 清理无用的软件包并清除以下载的软件包缓存
+yay -Rns $(yay -Qdtq) && yay -Scc
+
+
+# 用于安装指定软件包
+yay -S package_name
+# 用于卸载已安装的软件包
+yay -R package_name
+# 从已安装的软件中搜索软件包，如果不接软件包即 yay -Q 则意味着 用于列出系统中已安装的所有软件包
+yay -Q package_name
+# 用于在软件仓库搜索与指定关键字匹配的软件包
+yay -Ss search_keyword
+# 用于更新系统和所有已安装的软件包，如果再加一个 y 组成 yay -Syyu 则意味着强制更新
+yay -Syu
+# --noconfirm 参数用于在执行操作时禁用确认提示。它用于自动化脚本或批处理中，以避免在执行命令时需要手动确认
+yay -S <package_name> --noconfirm

@@ -1,8 +1,11 @@
 # 需求：解决官方仓库因为国内防火墙问题导致部分软件无法直接安装，只能翻墙下载安装包后自行手动安装！
 
-# 检查有没有安装 debtap
+# 首先查看电脑上是否安装过
+sudo pacman -Q debtap
+# 检查软件库有没有 debtap 包
 sudo pacman -Ss debtap
-# 或者通过添加/删除软件工具进行安装，需要使用AUR源。
+# 安装yay工具，记得配置arch
+# 或者通过添加/删除软件工具进行安装，需要使用AUR源。（推荐）
 sudo pacman -S yay
 
 
@@ -19,4 +22,6 @@ sudo debtap typora_1.9.3_amd64.deb
 # 安装软件
 sudo pacman -U XXXX.tar.xz
 sudo pacman -U typora-1.9.3-1-x86_64.pkg.tar.zst
+
+
 
