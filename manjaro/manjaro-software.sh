@@ -38,6 +38,20 @@ yay -S aur/jetbrains-toolbox aur/apifox aur/watt-toolkit-bin aur/switchhosts-bin
 yay -S aur/yesplaymusic aur/extension-manager aur/windterm-bin tabby-bin
 
 
+
+# 当 manjaro 因为网络无法安装 deb 包时，可以使用 debtap 安装 如下
+# 安装 debtap
+yay -S debtap
+# 升级debtap,这一步是必须的，否则在第一次执行下面的语句时会出现错误提示。
+sudo debtap -u
+# 变更deb包
+sudo debtap xxxx.deb
+sudo debtap expressvpn_3.74.0.6-1_amd64.deb
+# 安装
+sudo pacman -U XXXX.tar.xz
+
+
+
 echo "==========开始jetbra破解工具包=========="
 wget -O jetbra.zip https://hardbin.com/ipfs/bafybeiawsvnhqx5o2aqa37pvq7brlk7vqj2cpty3b5xac655bxbpqbpkq4/files/jetbra-ded4f9dc4fcb60294b21669dafa90330f2713ce4.zip
 # 解压 ZIP 压缩文件，使用 unzip 解压直接得到里面内容，也可以后面指定目录

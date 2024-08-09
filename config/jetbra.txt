@@ -7,7 +7,6 @@ https://ipfs.github.io/public-gateway-checker/
 3、在 idea 的vm配置文件 idea64.vmoptions 中添加如下内容：
 
 
-
 -Xms128m
 -Xmx4096m
 -XX:ReservedCodeCacheSize=512m
