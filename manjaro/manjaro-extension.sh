@@ -57,6 +57,7 @@ nautilus ~/.local/share/gnome-shell/extensions
 
 
 # 以下是必装和推荐安装的扩展插件
+# gtk4-ding@smedius.gitlab.com
 Rounded_Corners@lennart-k
 rounded-window-corners@fxgn
 SettingsCenter@lauinger-clan.de
@@ -88,6 +89,7 @@ places-menu@gnome-shell-extensions.gcampax.github.com
 nightthemeswitcher@romainvigier.fr
 add-to-desktop@tommimon.github.com
 Bluetooth-Battery-Meter@maniacx.github.com
+lockkeys@vaina.lt
 windowgestures@extension.amarullz.com
 order-extensions@wa4557.github.com
 display-scale-switcher@knokelmaat.gitlab.com
@@ -113,7 +115,6 @@ lunarcal@ailin.nemui
 # dash2dock-lite@icedman.github.com
 # rounded-window-corners@yilozt
 # ddterm@amezin.github.com
-# gtk4-ding@smedius.gitlab.com
 # Vitals@CoreCoding.coms
 # vbox-applet@gs.eros2.info
 # lan-ip-address@mrhuber.com
