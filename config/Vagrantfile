@@ -5,6 +5,7 @@ Vagrant.configure("2") do |config|
   # 公共配置直接定义在外层，脱离于每个独立的 vm.define
   # 使用 debian/bookworm64 的 box 也就是 debian12
   config.vm.box = "debian/bookworm64"
+  # config.vm.box = "ubuntu/jammy64"
   # 设置虚拟机启动超时时间为 30 秒
   config.vm.boot_timeout = 30
   # 设置虚拟磁盘大小为40GB，最低40GB，格式为 VDI  
