@@ -1,5 +1,6 @@
 #!/bin/bash
 
+如果安装了 yay 就不要在安装和使用 flatpak 了，因为 yay 中基本都有，避免造成内存占用，所有软件读使用 pacman、yay 进行安装管理
 sudo pacman -Syyu
 sudo pacman -S yay git
 git config --global user.name "龙茶清欢"

@@ -158,7 +158,7 @@ sudo ufw deny smtp 　         禁止外部访问smtp服务
 sudo ufw allow 22/tcp 　      允许所有的外部IP访问本机的22/tcp (ssh)端口 
 sudo ufw allow 2333/tcp 　    添加2333端口，仅TCP协议
 sudo ufw allow 6666/udp 　    添加6666端口，仅UDP协议
-sudo ufw allow 8888:9999 　   添加8888到9999之间的端口
+sudo ufw allow 6380:6390/tcp 　   添加6380到6390之间的端口
 sudo ufw delete allow smtp 　 删除上面建立的某条规则
 sudo ufw allow ssh 　         添加22端口
 sudo ufw allow http 　        添加80端口

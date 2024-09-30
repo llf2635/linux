@@ -8,11 +8,11 @@ https://hardbin.com/ipfs/bafybeih65no5dklpqfe346wyeiak6wzemv5d7z2ya7nssdgwdz4xrm
 3、在 idea 的vm配置文件 idea64.vmoptions 中添加如下内容：
 
 
--Xms128m
--Xmx4096m
+-Xms1g
+-Xmx5g
+-XX:+UseZGC
 -XX:ReservedCodeCacheSize=512m
 -XX:+IgnoreUnrecognizedVMOptions
--XX:+UseG1GC
 -XX:SoftRefLRUPolicyMSPerMB=50
 -XX:CICompilerCount=2
 -XX:+HeapDumpOnOutOfMemoryError
@@ -30,4 +30,3 @@ https://hardbin.com/ipfs/bafybeih65no5dklpqfe346wyeiak6wzemv5d7z2ya7nssdgwdz4xrm
 --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
 --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
 -javaagent:/home/lcqh/.jetbra/ja-netfilter.jar=jetbrains
-

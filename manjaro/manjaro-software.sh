@@ -26,16 +26,26 @@ flatpak install flathub md.obsidian.Obsidian -y
 # 办公软件
 flatpak install flathub org.libreoffice.LibreOffice -y
 
+
+yay -S aur/whitesur-gtk-theme aur/whitesur-icon-theme aur/whitesur-cursor-theme
+
+
+
 # extra 意为 arch 官方仓库，aur 为用户仓库
-# watt-toolkit 的需要
-# extra/flameshot 无法使用
 sudo chmod a+w /etc/hosts
-yay -S extra/neofetch extra/evolution extra/popsicle
+yay -S extra/neofetch extra/evolution extra/popsicle extra/code extra/obsidian
 evolution配置qq邮箱授权码： embwnsuwkdjrebge
 
-yay -S extra/vagrant extra/virtualbox
-yay -S aur/jetbrains-toolbox aur/apifox aur/watt-toolkit-bin aur/switchhosts-bin
-yay -S aur/yesplaymusic aur/extension-manager aur/windterm-bin tabby-bin
+yay -S extra/vagrant extra/virtualbox extra/postgresql
+yay -S aur/jetbrains-toolbox aur/apifox aur/switchhosts-bin
+yay -S aur/yesplaymusic aur/extension-manager aur/tabby-bin
+yay -S aur/linuxqq aur/wechat aur/baidunetdisk-bin aur/typora aur/navicat17-premium-cs
+# Navicat 调整界面和字体大小： 
+1. 选择工具 > 选项。
+2. 选择常规、编辑器或记录。在常规处选择 高DPI 进行缩放配置
+3. 为界面、编辑器或数据网格选择你想要的样式或大小。
+在變更界面字体后，请重新启动 Navicat 才能使更改生效。
+
 
 
 

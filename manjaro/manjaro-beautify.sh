@@ -2,7 +2,8 @@
 
 echo "==========开始桌面美化配置=========="
 # 更新系统
-sudo apt update && apt upgrade -y
+sudo pacman -S yay
+yay -Syyu
 
 
 echo "==========开始下载并配置gtk主题=========="
