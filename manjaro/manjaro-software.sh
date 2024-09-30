@@ -39,7 +39,8 @@ yay -S extra/neofetch extra/evolution extra/popsicle extra/code extra/obsidian e
 evolution配置qq邮箱授权码： embwnsuwkdjrebge
 
 yay -S extra/vagrant extra/virtualbox extra/postgresql
-yay -S aur/jetbrains-toolbox aur/apifox aur/switchhosts-bin
+
+yay -S aur/jetbrains-toolbox aur/apifox aur/switchhosts-bin aur/google-chrome
 yay -S aur/yesplaymusic aur/extension-manager aur/tabby-bin
 yay -S aur/linuxqq aur/wechat aur/baidunetdisk-bin aur/typora aur/navicat17-premium-cs
 # Navicat 调整界面和字体大小： 
