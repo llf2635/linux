@@ -27,13 +27,15 @@ flatpak install flathub md.obsidian.Obsidian -y
 flatpak install flathub org.libreoffice.LibreOffice -y
 
 
+
+
+
+
+
 yay -S aur/whitesur-gtk-theme aur/whitesur-icon-theme aur/whitesur-cursor-theme
 
-
-
 # extra 意为 arch 官方仓库，aur 为用户仓库
-sudo chmod a+w /etc/hosts
-yay -S extra/neofetch extra/evolution extra/popsicle extra/code extra/obsidian
+yay -S extra/neofetch extra/evolution extra/popsicle extra/code extra/obsidian extra/gnome-boxes
 evolution配置qq邮箱授权码： embwnsuwkdjrebge
 
 yay -S extra/vagrant extra/virtualbox extra/postgresql
