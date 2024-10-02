@@ -37,8 +37,20 @@ yay -S aur/whitesur-gtk-theme aur/whitesur-icon-theme aur/whitesur-cursor-theme
 # extra 意为 arch 官方仓库，aur 为用户仓库
 yay -S extra/neofetch extra/evolution extra/popsicle extra/code extra/obsidian extra/gnome-boxes
 evolution配置qq邮箱授权码： embwnsuwkdjrebge
+ 
+yay -S extra/neovim extra/zed
+# https://zed.rust-lang.net.cn/docs/getting-started
+NeoVim支持插件管理和高级配置。一个常见的方法是使用一个插件管理器如vim-plug或者packer.nvim来管理你的插件。这里以packer.nvim为例：
+git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+创建一个名为init.lua的文件到 ~/.config/nvim/ 目录下，并设置你的NeoVim配置。例如：
+nvim ~/.config/nvim/init.lua
 
-yay -S extra/vagrant extra/virtualbox extra/postgresql
+yay -S extra/vagrant extra/virtualbox extra/postgresql extra/alacritty extra/lapce extra/helix extra/nushell
+# 以下软件都是 rust 应用
+yay -S extra/alacritty	Alacritty 使用 Rust 编写，是一款极简主义风格的跨平台终端模拟器，目前可以说是全网最快。
+yay -S extra/lapce	类似 vscode 的代码编辑器
+yay -S extra/helix	目标：取代 Vim 和 NeoVim
+yay -S extra/nushell	目标：取代 PowerShell 和 ZSh
 
 yay -S aur/jetbrains-toolbox aur/apifox aur/switchhosts-bin aur/google-chrome
 yay -S aur/yesplaymusic aur/extension-manager aur/tabby-bin
@@ -48,6 +60,24 @@ yay -S aur/linuxqq aur/wechat aur/baidunetdisk-bin aur/typora aur/navicat17-prem
 2. 选择常规、编辑器或记录。在常规处选择 高DPI 进行缩放配置
 3. 为界面、编辑器或数据网格选择你想要的样式或大小。
 在變更界面字体后，请重新启动 Navicat 才能使更改生效。
+
+yay -S aur/clash-verge aur/rustdesk 
+
+# archlinux 官方文档 https://wiki.archlinux.org/title/Waydroid
+yay -S aur/waydroid aur/python-pyclip
+
+waydroid session stop
+echo "ip route add default via （你的红框圈住的内容）" | sudo waydroid shell
+
+sudo pacman -S lzip
+git clone https://github.com/casualsnek/waydroid_script
+cd waydroid_script
+python3 -m venv venv
+venv/bin/pip install -r requirements.txt
+sudo venv/bin/python3 main.py
+
+sudo venv/bin/python3 main.py install {gapps, magisk, libndk, libhoudini, nodataperm, smartdock, microg, mitm}
+
 
 
 

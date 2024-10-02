@@ -5,6 +5,9 @@ echo "==========开始桌面美化配置=========="
 sudo pacman -S yay
 yay -Syyu
 
+nautilus admin:/usr/share/icons
+nautilus admin:/usr/share/themes
+yay -S aur/whitesur-gtk-theme aur/whitesur-icon-theme aur/whitesur-cursor-theme
 
 echo "==========开始下载并配置gtk主题=========="
 # 先创建一个主题存放目录，然后下载 WhiteSur 系统主题
@@ -25,6 +28,8 @@ cd WhiteSur-gtk-theme
 ./tweaks.sh -F
 # 修复 Flatpak gtk-4.0 应用程序
 sudo flatpak override --filesystem=xdg-config/gtk-4.0
+
+
 # 修改 Firefox 主题
 # 可以通过编辑
 ./tweaks.sh -f
