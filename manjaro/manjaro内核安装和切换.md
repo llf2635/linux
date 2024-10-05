@@ -17,6 +17,7 @@
    
    # 添加新内核
    # mhwd-kernel 会用现有内核中使用的任何模块自动更新新安装的内核。例如，如果你要从内核 4.14 升级到 4.19，mhwd-kernel 会自动用 4.14 中的所有模块更新 4.19。
+   mhwd-kernel 只能安装官方常规内核，无法安装 linux-zen
    
    # 查看当前使用的内核和内核信息
    mhwd-kernel -li		
@@ -47,8 +48,8 @@
    sudo pacman -R linux[version] linux[version]-headers linux[version]-extramodules
    sudo pacman -R linux50 linux50-headers linux50-extramodules
    # 在 BIOS 中选择已经安装的 Linux 内核
-   Choose "Advanced Options for Manjaro Linux" by using the arrow keys ↑ ↓ on your keyboard and then 
-   使用键盘上的方向键 ↑ ↓ 选择 “Manjaro Linux 高级选项”，然后 ↵ Enter。
+   启动时，系统上安装的所有可用内核都会显示出来。GNU GRUB 会显示几个选项。使用键盘上的方向键 ↑ ↓ 选择 “Manjaro Linux 高级选项”，然后 ↵ Enter。
+   如果您隐藏了 grub 菜单，只需在启动时按 Esc 键即可显示并进行更改
    ```
    替换`linux515`为所需的内核版本。
    
@@ -73,11 +74,8 @@
 
 启动完成后，可以通过运行`uname -r`命令来验证当前正在运行的内核版本。
 
-### 卸载旧内核（可选）
-
-如果你不再需要某个特定的内核版本，可以通过以下命令卸载它：
 ```bash
-sudo pacman -Rcs linux<version>
+# 参考博客 https://orangelop.github.io/2023/01/27/%E5%9C%A8Arch-Linux%E4%B8%8B%E4%BD%BF%E7%94%A8Waydroid%E8%BF%90%E8%A1%8CAndroid-Apps/
 ```
 替换`<version>`为实际的内核版本号。请注意，通常建议保留至少两个内核版本，以防最新的内核出现问题。
 

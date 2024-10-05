@@ -5,7 +5,41 @@ WayDroid（前身为 Userful 和 PhoenixOS）是一个允许你在 Linux 系统�
 #### 1. 安装 WayDroid
 然后安装 WayDroid：
 ```bash
-sudo pacman -S extra/lzip aur/python-pyclip
+# 参考 archlinux 官网  https://wiki.archlinux.org/title/Waydroid#Installation
+# 个人安装博客 https://orangelop.github.io/2023/01/27/%E5%9C%A8Arch-Linux%E4%B8%8B%E4%BD%BF%E7%94%A8Waydroid%E8%BF%90%E8%A1%8CAndroid-Apps/
+
+# Waydroid 目前与英特尔 GPU 的配合最为默契。开箱即可使用。所有 AMD GPU 均已支持；如果 Waydroid 无法正常工作，你也可以尝试创建一个新的 Waydroid 镜像（适用于 Radeon 680M），
+# Waydroid 只能在 Wayland 会话管理器中运行，因此请确保你是在 Wayland 会话中。
+
+# 内核模块
+您需要运行自带粘合剂模块的内核。它们不属于 Arch Linux 的默认内核 (linux)，因此您需要安装包含这些模块的内核。
+您可能还需要配置引导加载器，以使用不同的内核。请参阅引导加载器的维基页面，了解如何使用新内核启动。启动到另一个内核（版本）是必须重启 Linux 系统的少数情况之一。在启动 Waydroid 之前，你应该先用这些模块启动内核。
+要获得兼容的内核，您有多种选择：
+# 使用 Linux-Zen
+linux-zen 内核包含必要的模块。这可能是最方便的方法，因为你不必编译内核（这需要很长时间），而且会定期收到更新版本。
+
+# 您需要运行自带粘合剂模块的内核。它们不是 Arch Linux 默认内核 (linux) 的一部分，因此您需要安装包含这些模块的内核。
+
+
+
+# 实测不用切换 linux-zen 内核也可唯一使用
+
+yay -S extra/lzip aur/python-pyclip waydroid-helper
+
+yay -S waydroid
+sudo waydroid init -f
+sudo systemctl start waydroid-container
+sudo waydroid container start
+waydroid session start
+waydroid show-full-ui
+
+ip addr show
+sudo ufw allow 53
+sudo ufw allow 67
+sudo ufw default allow FORWARD
+sudo ufw reload
+sudo ufw status
+
 
 git clone https://github.com/casualsnek/waydroid_script
 cd waydroid_script
@@ -13,9 +47,12 @@ python3 -m venv venv
 venv/bin/pip install -r requirements.txt
 sudo venv/bin/python3 main.py
 
+
+
+
+
 sudo venv/bin/python3 main.py install {gapps, magisk, libndk, libhoudini, nodataperm, smartdock, microg, mitm}
 
-yay -Sy waydroid
 
 # waydroid
 https://github.com/waydroid/waydroid
