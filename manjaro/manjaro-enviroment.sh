@@ -17,7 +17,7 @@ sudo pacman -S --needed \
     librsvg \
     libvips
 
-yay -S nodejs npm vim zip
+yay -S vim zip
 # 安装的 rust 自带 cargo 包管理工具
 echo "==========开始安装 Rust=========="
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
@@ -52,16 +52,7 @@ sdk current
 
 echo "==========开始安装 Bun=========="
 # 安装 bun
-# curl -fsSL https://bun.sh/install | bash
+curl -fsSL https://bun.sh/install | bash
 npm install -g bun
 source ~/.bashrc
 echo 你刚安装的 bun 版本号为： $(bun --version)
-
-echo "==========开发环境安装配置完成，需要重启才能生效！！！=========="
-# 询问用户是否立刻重启
-read -p "是否立即重启系统？(y/n): " answer
-if [[ $answer == "y" || $answer == "Y" ]]; then
-    sudo reboot
-else
-    echo "已取消立即重启，但系统将在5分钟后自动重启，请保存您的工作！！！"
-fi

@@ -29,8 +29,8 @@ flatpak install flathub org.libreoffice.LibreOffice -y
 
 
 
-
-
+sudo pacman -Syyu
+sudo pacman -S yay
 yay -S gnome-tweaks gnome-software aur/extension-manager
 yay -S aur/whitesur-gtk-theme aur/whitesur-icon-theme aur/whitesur-cursor-theme
 
