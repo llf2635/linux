@@ -42,18 +42,11 @@ evolution配置qq邮箱授权码： embwnsuwkdjrebge
 yay -S extra/gparted
 # 在调整分区大小之前，通常需要先卸载（unmount）该分区。这是因为文件系统在挂载状态下正在使用，任何对其底层数据结构的修改都可能导致数据损坏或系统不稳定。
 
- 
-yay -S extra/neovim extra/zed
-# https://zed.rust-lang.net.cn/docs/getting-started
-NeoVim支持插件管理和高级配置。一个常见的方法是使用一个插件管理器如vim-plug或者packer.nvim来管理你的插件。这里以packer.nvim为例：
-git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-创建一个名为init.lua的文件到 ~/.config/nvim/ 目录下，并设置你的NeoVim配置。例如：
-nvim ~/.config/nvim/init.lua
 
 yay -S extra/libreoffice-fresh-zh-cn
 yay -S extra/vagrant extra/virtualbox extra/postgresql extra/alacritty extra/lapce extra/helix extra/nushell
 # 以下软件都是 rust 应用
-yay -S extra/alacritty	Alacritty 使用 Rust 编写，是一款极简主义风格的跨平台终端模拟器，目前可以说是全网最快。
+yay -S extra/alacritty	Alacritty 使用 Rust 编写，是一款极简主义风格的跨平台终端模拟器，目前可以说是全网最快。不要安装
 yay -S extra/lapce	类似 vscode 的代码编辑器
 yay -S extra/helix	目标：取代 Vim 和 NeoVim
 yay -S extra/nushell	目标：取代 PowerShell 和 ZSh
@@ -70,7 +63,12 @@ yay -S aur/linuxqq aur/wechat aur/baidunetdisk-bin aur/typora aur/navicat17-prem
 yay -S aur/clash-verge aur/rustdesk
 
 
-
+yay -S extra/neovim extra/zed
+# https://zed.rust-lang.net.cn/docs/getting-started
+NeoVim支持插件管理和高级配置。一个常见的方法是使用一个插件管理器如vim-plug或者packer.nvim来管理你的插件。这里以packer.nvim为例：
+git clone https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+创建一个名为init.lua的文件到 ~/.config/nvim/ 目录下，并设置你的NeoVim配置。例如：
+nvim ~/.config/nvim/init.lua
 
 
 # 当 manjaro 因为网络无法安装 deb 包时，可以使用 debtap 安装 如下
