@@ -172,13 +172,37 @@ gtk-modules="appmenu-gtk-module"
 
 
 
+
+
+
+
+yay -S extra/gnome-shell-extensions
+
 # Night Theme Switcher 扩展插件配置
 # 白天执行命令
+
+gsettings set org.gnome.desktop.interface cursor-theme "WhiteSur-cursors"
 gsettings set org.gnome.desktop.interface icon-theme "WhiteSur-light"
-gsettings set org.gnome.shell.extensions.user-theme name "WhiteSur-Light"
 gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-Light"
+gsettings set org.gnome.shell.extensions.user-theme name "WhiteSur-Light"
+gsettings set org.gnome.desktop.wm.preferences theme 'WhiteSur-Light'
 
 # 夜晚执行命令
+gsettings set org.gnome.desktop.interface cursor-theme "WhiteSur-cursors"
 gsettings set org.gnome.desktop.interface icon-theme "WhiteSur-dark"
-gsettings set org.gnome.shell.extensions.user-theme name "WhiteSur-Dark"
 gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-Dark"
+gsettings set org.gnome.shell.extensions.user-theme name "WhiteSur-Dark"
+gsettings set org.gnome.desktop.wm.preferences theme 'WhiteSur-Dark'
+
+# 列出所有可用的模式
+gsettings list-schemas
+# 查看某个特定模式下的所有键
+gsettings list-keys org.gnome.desktop.interface
+gsettings list-keys org.gnome.shell.extensions.user-theme
+# 需要安装了 user-themes 扩展插件才有这个配置选项
+gsettings get org.gnome.shell.extensions.user-theme name
+gsettings list-keys org.gnome.desktop.wm.preferences
+gsettings reset org.gnome.desktop.wm.preferences theme
+gsettings set org.gnome.desktop.wm.preferences theme 'WhiteSur'
+
+

@@ -1,0 +1,90 @@
+# 自定义初始化，格式如下
+vagrant init name url
+vagrant init ubuntu-bionic https://mirrors.tuna.tsinghua.edu.cn/ubuntu-cloud-images/jammy/current/bionic-server-cloudimg-amd64-vagrant.box
+
+vagrant plugin install --plugin-clean-sources --plugin-source https://gems.ruby-china.com/ <plugin>...
+vagrant plugin install --plugin-clean-sources --plugin-source https://gems.ruby-china.com/ vagrant-disksize
+vagrant plugin install vagrant-disksize
+
+vagrant up
+
+
+# 创建一个虚拟机的总目录
+mkdir ~/桌面/Linux
+# 创建一个VirtualBox存放虚拟机的目录，同时需要去Virtualbox中进行全局配置
+mkdir ~/桌面/Linux/VirtualBox VMs
+cd ~/桌面/Linux
+# 创建一个虚拟机启动配置文件
+vagrant init
+# 启动虚拟机
+vagrant up
+# 虚拟机用户登录
+vagrant ssh
+# 从 vagrant 用户切换到 root
+su
+vagrant
+# 获取软件更新并更新全部软件
+sudo apt update && sudo apt upgrade -y
+# 配置加速镜像源，参考清华大学开源软件景象站 https://mirrors.tuna.tsinghua.edu.cn/help/debian/
+apt install apt-transport-https ca-certificates
+
+cat /etc/apt/sources.list.d/debian.sources
+# 默认没有 /etc/apt/sources.list.d/debian.sources 目录和文件，下面自动创建
+echo "
+Types: deb
+URIs: https://mirrors.tuna.tsinghua.edu.cn/debian
+Suites: bookworm bookworm-updates bookworm-backports
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# 默认注释了源码镜像以提高 apt update 速度，如有需要可自行取消注释
+Types: deb-src
+URIs: https://mirrors.tuna.tsinghua.edu.cn/debian
+Suites: bookworm bookworm-updates bookworm-backports
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+# 以下安全更新软件源包含了官方源与镜像站配置，如有需要可自行修改注释切换
+Types: deb
+URIs: https://mirrors.tuna.tsinghua.edu.cn/debian-security
+Suites: bookworm-security
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+
+Types: deb-src
+URIs: https://mirrors.tuna.tsinghua.edu.cn/debian-security
+Suites: bookworm-security
+Components: main contrib non-free non-free-firmware
+Signed-By: /usr/share/keyrings/debian-archive-keyring.gpg
+" | sudo tee /etc/apt/sources.list.d/debian.sources
+
+cat /etc/apt/sources.list
+# 把默认的传统格式内容注释掉，避免重复
+echo "
+# deb https://deb.debian.org/debian bookworm main
+# deb-src https://deb.debian.org/debian bookworm main
+# deb https://security.debian.org/debian-security bookworm-security main
+# deb-src https://security.debian.org/debian-security bookworm-security main
+# deb https://deb.debian.org/debian bookworm-updates main
+# deb-src https://deb.debian.org/debian bookworm-updates main
+# deb https://deb.debian.org/debian bookworm-backports main
+# deb-src https://deb.debian.org/debian bookworm-backports main
+" | sudo tee /etc/apt/sources.list
+
+# 安装宝塔面板
+wget -O install.sh https://download.bt.cn/install/install_lts.sh && bash install.sh ed8484bec
+# 宝塔面板破解
+curl https://io.bt.sy/install/update_panel.sh|bash
+
+ 外网面板地址: https://192.168.56.10:41662/868f294d
+ 内网面板地址: https://192.168.56.10:41662/868f294d
+ username: b6dafzvt
+ password: 58112248
+
+# 内网穿透教程，需要一台拥有公网 IP 的服务器，并以此作为内网穿透的服务端，目标电脑作为客户端
+https://www.bt.cn/bbs/thread-137773-1-1.html
+echo "
+PermitRootLogin no
+" | sudo tee -a /etc/ssh/sshd_config
+sudo systemctl restart sshd
+ssh root@192.168.56.10 -p 59022

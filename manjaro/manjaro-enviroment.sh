@@ -29,7 +29,7 @@ sdkman_dir="$HOME/.sdkman"
 # 如果目录存在
 if [ -d "$sdkman_dir" ]; then
     cd $HOME
-    rm -rf .sdkman		
+    rm -rf $HOME/.sdkman		
 fi
 # 安装 sdkman 工具
 curl -s "https://get.sdkman.io" | bash
@@ -39,7 +39,7 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 echo 你刚安装的 sdkman 版本号为： $(sdk version)
 # 这将安装指定版本的Java。
 echo "==========开始安装 Java=========="
-sdk install java 21.0.3-graal
+sdk install java 21.0.4-graal
 sdk install java 17.0.11-graal
 sdk use java 21.0.3-graal
 sdk install kotlin
@@ -53,6 +53,9 @@ sdk current
 echo "==========开始安装 Bun=========="
 # 安装 bun
 curl -fsSL https://bun.sh/install | bash
-npm install -g bun
+yay -S nodejs npm
+sudo npm install -g bun
 source ~/.bashrc
 echo 你刚安装的 bun 版本号为： $(bun --version)
+
+

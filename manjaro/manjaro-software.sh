@@ -35,7 +35,7 @@ yay -S gnome-tweaks gnome-software aur/extension-manager
 yay -S aur/whitesur-gtk-theme aur/whitesur-icon-theme aur/whitesur-cursor-theme
 
 # extra 意为 arch 官方仓库，aur 为用户仓库
-yay -S extra/neofetch extra/evolution extra/popsicle extra/code extra/obsidian extra/gnome-boxes
+yay -S extra/neofetch extra/evolution extra/popsicle extra/obsidian extra/gnome-boxes
 evolution配置qq邮箱授权码： embwnsuwkdjrebge
  
 # linux系统下的分区助手
@@ -51,8 +51,9 @@ yay -S extra/lapce	类似 vscode 的代码编辑器
 yay -S extra/helix	目标：取代 Vim 和 NeoVim
 yay -S extra/nushell	目标：取代 PowerShell 和 ZSh
 
-yay -S aur/jetbrains-toolbox aur/apifox aur/switchhosts-bin aur/google-chrome
-yay -S aur/yesplaymusic aur/extension-manager aur/tabby-bin
+yay -S jetbrains-toolbox apifox switchhosts-bin visual-studio-code-bin google-chrome
+# VSCode 主题随系统自动切换，打开设置、搜索并开启 autoDetectColorScheme 
+yay -S yesplaymusic tabby-bin
 yay -S aur/linuxqq aur/wechat aur/baidunetdisk-bin aur/typora aur/navicat17-premium-cs
 # Navicat 调整界面和字体大小： 
 1. 选择工具 > 选项。

@@ -43,6 +43,63 @@ sudo update-grub && update-grub2
 
 EasyUEFI
 
+
+
+# WhiteSur GTK 主题
+git clone https://github.com/vinceliuice/WhiteSur-gtk-theme.git --depth=1
+cd WhiteSur-gtk-theme
+
+# 安装默认 WhiteSur GTK 主题包
+./install.sh    
+# 卸载 GTK 主题
+./install.sh -r
+# 修复 libadwaita (不完美)
+./install.sh -l -c Light 
+
+# 优化头部 gnome-shell 
+./install.sh --shell -i 'arch'
+
+# 修复 libadwaita (不完美)
+./install.sh --round --right
+./install.sh -l -c Light --shell -i 'arch' --round --right
+
+# 安装的 flat Firefox 主题
+./tweaks.sh -f flat
+# 卸载 Firefox 火狐主题
+./tweaks.sh -f -r
+
+# 修复了 Dash to Dock 主题问题。
+./tweaks.sh -d
+
+# 安装 GDM 主题，使用默认的背景
+sudo ./tweaks.sh -g -b default         
+# 安装 GDM 主题，使用自定义背景
+sudo ./tweaks.sh -g -b "my picture.jpg" 
+# 卸载 GDM 主题
+sudo ./tweaks.sh -g -r
+
+
+# WhiteSur Icon 主题
+git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git --depth=1
+# 安装 Icon 主题
+./install.sh
+# 卸载 Icon 主题
+./install.sh -r
+
+# WhiteSur cursors 主题
+git clone https://github.com/vinceliuice/WhiteSur-cursors.git -depth=1
+sudo ./install.sh
+yay -S WhiteSur-cursors
+
+# WhiteSur 壁纸
+git clone https://github.com/vinceliuice/WhiteSur-wallpapers.git --depth=1
+# 安装 Gnome 背景（壁纸将随时间变化）
+sudo ./install-gnome-backgrounds.sh
+# 安装普通壁纸
+./install-wallpapers.sh
+
+
+# grub2 主题
 git clone https://github.com/vinceliuice/grub2-themes.git
 sudo ./install.sh -t tela -s 2k
 sudo ./install.sh -t whitesur -s 2k
@@ -51,6 +108,10 @@ sudo ./install.sh -r -t whitesur
 
 cat /etc/default/grub
 grep "GRUB_THEME" /etc/default/grub
+
+
+https://discovery.endeavouros.com/bluetooth/bluetooth
+https://discovery.endeavouros.com/installation/live-iso-tricks-tips
 ```
 
 3. 在打开的文件中，找到名为 `GRUB_DEFAULT` 的行。这是设置默认启动项的选项。默认情况下，它的值通常是 `0`，表示选择第一个启动项。
