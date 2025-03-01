@@ -62,12 +62,12 @@ https://www.better365.cn/tv.html
 ---
 
 ### **五、效率工具**
-| 工具          | 安装命令                                                     | 作用说明                           |
-| ------------- | ------------------------------------------------------------ | ---------------------------------- |
-| **iTerm2**    | `brew install --cask iterm2`                                 | 增强终端（支持分屏、快捷键、主题） |
-| **Oh My Zsh** | `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"` | Zsh 配置框架（提升终端体验）       |
-| **htop**      | `brew install htop`                                          | 进程监控工具（实时查看资源占用）   |
-| **ncdu**      | `brew install ncdu`                                          | 磁盘空间分析工具                   |
+| 工具            | 安装命令                                                                                              | 作用说明              |
+| ------------- | ------------------------------------------------------------------------------------------------- | ----------------- |
+| **iTerm2**    | `brew install --cask iterm2`                                                                      | 增强终端（支持分屏、快捷键、主题） |
+| **Oh My Zsh** | `sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"` | Zsh 配置框架（提升终端体验）  |
+| **htop**      | `brew install htop`                                                                               | 进程监控工具（实时查看资源占用）  |
+| **ncdu**      | `brew install ncdu`                                                                               | 磁盘空间分析工具          |
 
 ---
 
@@ -158,7 +158,7 @@ brew install --cask applite
 brew uninstall --cask applite
 
 # 音乐软件、小米投屏
-brew install --cask yesplaymusic hyperconnect
+brew install --cask hyperconnect obsidian
 
 # 配置 Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
