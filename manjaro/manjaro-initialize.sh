@@ -271,6 +271,16 @@ go version
 
 
 
+
+# 列出所有已安装的 Schema
+gsettings list-schemas
+# 列出某个 Schema 下的所有键
+gsettings list-keys org.gnome.desktop.interface
+# 查看键的取值类型和描述
+gsettings describe org.gnome.desktop.interface font-name
+# 递归列出某个 Schema 的键值（例如 org.gnome.desktop.interface）
+gsettings list-recursively org.gnome.desktop.interface
+
 # 参考官方解决方案  https://github.com/vinceliuice/WhiteSur-gtk-theme/issues/1059
 # Night Theme Switcher 扩展插件配置
 # 白天执行命令
@@ -301,7 +311,7 @@ sudo pacman -S ttf-jetbrains-mono
 # 安装完字体后需要登出才能生效
 logout
 # 设置界面字体（Inter 或 Noto Sans，字号建议 11-12）（简体中文优先）
-gsettings set org.gnome.desktop.interface font-name '思源黑体 CN Medium 11'
+gsettings set org.gnome.desktop.interface font-name '思源黑体 CN Medium 12'
 # 设置文档字体（Noto Serif，字号建议 12）
 gsettings set org.gnome.desktop.interface document-font-name '思源宋体 CN Medium 12'
 # 设置等宽字体（编程/终端）（JetBrains Mono，字号建议 13-14）专为开发者设计，连字特性优秀
@@ -324,5 +334,21 @@ gsettings set org.gnome.desktop.interface text-scaling-factor 1.0
 # 高分屏适配优化，全局缩放比例。对于 16 英寸 2.5K（2560x1600），推荐缩放比例：125% (1.25x) 平衡空间利用和可读性。
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 通过 GNOME 设置 → 显示器/缩放，直接选择 125%
+
+# 显示电量百分比
+gsettings set org.gnome.desktop.interface show-battery-percentage true
+# 居中显示新建窗口
+gsettings set org.gnome.mutter center-new-windows true
+# 窗口按钮布局
+gsettings set org.gnome.desktop.wm.preferences button-layout 'appmenu:minimize,maximize,close'
+
+
+gsettings get org.gnome.desktop.wm.preferences button-layout
+gsettings list-keys org.gnome.mutter
+gsettings list-recursively org.gnome.mutter
+gsettings list-recursively org.gnome.desktop.interface
+gsettings list-recursively org.gnome.desktop.wm.preferences
+
+
 
 
