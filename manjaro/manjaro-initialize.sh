@@ -99,24 +99,37 @@ nautilus admin:/usr/share/gnome-shell/extensions
 nautilus ~/.local/share/gnome-shell/extensions
 cd ~/.local/share/gnome-shell/extensions
 
-yay -S aur/gnome-shell-extension-rounded-window-corners-reborn
-yay -S extra/gnome-shell-extensions
-nightthemeswitcher@romainvigier.fr
-dash-to-dock@micxgx.gmail.com
-Rounded_Corners@lennart-k
-rounded-window-corners@fxgn
+yay -S gnome-shell-extensions
+extra/gnome-shell-extensions
+extra/gnome-shell-extension-dash-to-dock
+extra/gnome-shell-extension-caffeine
+extra/gnome-shell-extension-vitals
+extra/gnome-shell-extension-gtk4-desktop-icons-ng
+
+aur/gnome-shell-extension-blur-my-shell
+aur/gnome-shell-extension-blur-my-shell-git
+
+aur/gnome-shell-extension-rounded-window-corners-reborn
+aur/gnome-shell-extension-rounded-window-corners-reborn-git
+
+aur/gnome-shell-extension-rounded-window-corners-git
+aur/gnome-shell-extension-compiz-alike-magic-lamp-effect-git
+aur/gnome-shell-extension-nightthemeswitcher-git
+
+aur/gnome-shell-extension-just-perfection-desktop
+aur/gnome-shell-extension-just-perfection-desktop-git
+
+aur/gnome-shell-extension-bluetooth-quick-connect
+aur/gnome-shell-extension-hidetopbar-git
+
+
 # 将应用程序搜索从概述中移除。全局搜索框，类似：search-everything
-search-light@icedman.github.com
-blur-my-shell@aunetx
-caffeine@patapon.info
+aur/gnome-shell-extension-search-light-git
+
 clipboard-indicator@tudmotu.com
-hidetopbar@mathieu.bidon.ca
-just-perfection-desktop@just-perfection
-bluetooth-quick-connect@bjarosze.gmail.com
-compiz-alike-magic-lamp-effect@hermes83.github.com
+
 compiz-windows-effect@hermes83.github.com
 wifiqrcode@glerro.pm.me
-kimpanel@kde.org
 # 根据自己的喜好配置通知横幅位置和动画。
 notification-banner-reloaded@marcinjakubowski.github.com
 
@@ -124,6 +137,17 @@ notification-banner-reloaded@marcinjakubowski.github.com
 SettingsCenter@lauinger-clan.de
 quick-settings-avatar@d-go
 
+extra/gnome-shell-extension-legacy-theme-auto-switcher
+yay -Rcns gnome-shell-extension-legacy-theme-auto-switcher
+aur/gnome-shell-extension-wifiqrcode-git
+yay -Rcns gnome-shell-extension-wifiqrcode-git
+logout
+
+# 查询系统中已安装的以 gnome-shell-extension 为前缀的软件包或扩展
+pacman -Q | grep '^gnome-shell-extension'
+yay -Q | grep '^gnome-shell-extension'
+# 查看所有启用的扩展
+gnome-extensions list
 
 
 # 全局统一GTK主题样式
@@ -137,15 +161,30 @@ https://wiki.archlinuxcn.org/wiki/GTK
 
 https://oo-infty.netlify.app/posts/unify-look-of-linux-gui-frameworks/
 
-# QGtkStyle
-# yay -S qt5-styleplugins qt6gtk2
-
-# QWhiteSurGtkDecorations
+# QWhiteSurGtkDecorations是一个 Qt 装饰插件，可以在Gnome wayland上实现类似 GNOME WhiteSur-gtk 主题风格的客户端装饰，适用于Qt 6 和 QT 5 平台。 
+# https://wiki.archlinuxcn.org/wiki/%E7%BB%9F%E4%B8%80_Qt_%E5%92%8C_GTK_%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%A4%96%E8%A7%82#QWhiteSurGtkDecorations
 yay -S qwhitesurgtkdecorations-qt5 qwhitesurgtkdecorations-qt6
-sudo vim /etc/profile
-export QT_WAYLAND_DECORATION=whitesur-gtk
-su
-echo 'export QT_WAYLAND_DECORATION=whitesur-gtk' >> /etc/profile
+# 将以下配置添加到用户的环境变量文件（如 ~/.bashrc 或 ~/.profile）：	
+echo 'export QT_WAYLAND_DECORATION=whitesur-gtk' >> ~/.profile
+source ~/.profile
+cat ~/.profile
+
+# /etc/profile 为系统环境变量
+# sudo vim /etc/profile
+# export QT_WAYLAND_DECORATION=whitesur-gtk
+# echo 'export QT_WAYLAND_DECORATION=whitesur-gtk' >> /etc/profile
+
+
+# Manjaro 官方文档，设置所有Qt应用程序使用GTK字体和主题。参考
+# https://wiki.manjaro.org/index.php/Set_all_Qt_app%27s_to_use_GTK%2B_font_%26_theme_settings#Overview
+pamac install qt5ct 
+echo 'export QT_QPA_PLATFORMTHEME=qt5ct' >> ~/.profile
+source ~/.profile
+echo '[[ -f ~/.profile ]] && . ~/.profile' >> ~/.bash_profile
+source ~/.bash_profile
+reboot
+
+sudo pacman -S xdg-desktop-portal
 
 
 # 加入全局环境变量
@@ -157,11 +196,13 @@ export QT_WAYLAND_DECORATION=whitesur-gtk
 yay -S libadwaita-demos
 # 可视化编辑  GSettings editor for GNOME.类似 主题、图标都可以在该软件可视化配置
 yay -S dconf-editor
-yay -S gnome-console    
+yay -S gnome-console
 yay -S libreoffice-still-zh-cn 
-yay -S jetbrains-toolbox apifox switchhosts-appimage visual-studio-code-bin google-chrome
+yay -S jetbrains-toolbox code apifox switchhosts google-chrome
+yay -S microsoft-edge-stable-bin
+yay -S firefox firefox-i18n-zh-cn
 yay -S linuxqq wechat baidunetdisk-bin typora
-yay -S yesplaymusic tabby-bin
+yay -S yesplaymusic tabby
 yay -S vagrant virtualbox postgresql
  yay -S neofetch evolution popsicle obsidian
  evolution配置qq邮箱授权码： embwnsuwkdjrebge
@@ -228,6 +269,8 @@ bun run tauri android dev
 sudo pacman -S go
 go version
 
+
+
 # 参考官方解决方案  https://github.com/vinceliuice/WhiteSur-gtk-theme/issues/1059
 # Night Theme Switcher 扩展插件配置
 # 白天执行命令
@@ -247,4 +290,39 @@ gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-Dark"
 gsettings set org.gnome.shell.extensions.user-theme name "WhiteSur-Dark"
 gsettings set org.gnome.desktop.wm.preferences theme 'WhiteSur-Dark'
 ln -fs $HOME/.config/gtk-4.0/gtk-Dark.css $HOME/.config/gtk-4.0/gtk.css
+
+# 字体设置
+# 安装思源黑体（简体中文）
+sudo pacman -S adobe-source-han-sans-cn-fonts
+# 安装思源宋体（简体中文）
+sudo pacman -S adobe-source-han-serif-cn-fonts
+# 安装 JetBrains Mono 等款字体
+sudo pacman -S ttf-jetbrains-mono
+# 安装完字体后需要登出才能生效
+logout
+# 设置界面字体（Inter 或 Noto Sans，字号建议 11-12）（简体中文优先）
+gsettings set org.gnome.desktop.interface font-name '思源黑体 CN Medium 11'
+# 设置文档字体（Noto Serif，字号建议 12）
+gsettings set org.gnome.desktop.interface document-font-name '思源宋体 CN Medium 12'
+# 设置等宽字体（编程/终端）（JetBrains Mono，字号建议 13-14）专为开发者设计，连字特性优秀
+gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Medium 13'
+# 设置窗口标题字体（加粗 Inter，字号稍大）
+gsettings set org.gnome.desktop.wm.preferences titlebar-font '思源黑体 CN Bold 12'
+gsettings get org.gnome.desktop.wm.preferences titlebar-font
+
+# 抗锯齿与渲染
+# 启用抗锯齿（推荐 subpixel RGB 次像素渲染）
+# 为 LCD 屏幕启用次像素渲染（RGB 顺序）
+gsettings set org.gnome.desktop.interface font-antialiasing 'rgba'
+# 为 OLED 屏幕使用灰度抗锯齿
+gsettings set org.gnome.desktop.interface font-antialiasing 'grayscale'
+# 微调模式（slight 平衡清晰度与渲染速度）
+gsettings set org.gnome.desktop.interface font-hinting 'slight'
+# 禁用字体缩放（依赖全局缩放比例，见下文）
+gsettings set org.gnome.desktop.interface text-scaling-factor 1.0
+
+# 高分屏适配优化，全局缩放比例。对于 16 英寸 2.5K（2560x1600），推荐缩放比例：125% (1.25x) 平衡空间利用和可读性。
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+通过 GNOME 设置 → 显示器/缩放，直接选择 125%
+
 
