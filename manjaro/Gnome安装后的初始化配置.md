@@ -363,6 +363,7 @@ sudo dmidecode -s bios-version
 # 它的核心目标是简化硬件固件的升级流程，让用户无需依赖 Windows 或厂商专用工具，直接在 Linux 环境下安全更新设备固件。
 # 并非所有设备都支持 fwupd，需在 LVFS 官网 https://fwupd.org/lvfs/vendors/ 查询具体型号。
 # 进入 LVFS 设备列表，搜索你的笔记本型号（如 MECHREVO Code01 Ver2.0）。若厂商未在此列出，则 fwupd 无法直接更新。
+# 在 fwupd 中，搜索和匹配固件更新的依据是电脑厂商（如 Dell、Lenovo、HP 等），而不是 BIOS 供应商（如 Insyde、Phoenix、AMI 等）。
 # 机械革命暂未加入 LVFS 合作厂商列表，因此 fwupd 无法直接更新其 BIOS。
 # 安装（Manjaro/Arch）
 sudo pacman -S fwupd
