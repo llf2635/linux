@@ -485,8 +485,8 @@ sudo pacman -S adobe-source-han-serif-cn-fonts
 #### **2. 场景化配置示例**
 - **终端/代码编辑器（Sans）**：  
   ```bash
-  gsettings set org.gnome.desktop.interface font-name '思源黑体 CN Medium 11'
-  gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono 13'
+  gsettings set org.gnome.desktop.interface font-name '思源黑体 CN Medium 12'
+  gsettings set org.gnome.desktop.interface monospace-font-name 'JetBrains Mono Medium 13'
   ```
 
 - **文档阅读器（Serif）**：  

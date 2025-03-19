@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "906065e858cfab5e",
+        "id": "9c99c28176858e3d",
         "type": "tabs",
         "children": [
           {
-            "id": "a129d0fe0ffdf96c",
+            "id": "e87a7768ffaa8aa7",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": ".obsidian/app.json",
-                "bFile": ".obsidian/app.json",
-                "aRef": ""
+                "file": "manjaro/Gnome安装后的初始化配置.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: app.json"
+              "icon": "lucide-file",
+              "title": "Gnome安装后的初始化配置"
             }
           }
         ]
@@ -177,8 +177,12 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "a129d0fe0ffdf96c",
+  "active": "e87a7768ffaa8aa7",
   "lastOpenFiles": [
+    "manjaro/Gnome 常用扩展及其作用.md",
+    "manjaro/Gnome 字体设置注意事项.md",
+    "manjaro/Gnome安装后的初始化配置.md",
+    "manjaro/Empty File",
     "apple/Mac min m4安装常用软件.md",
     "apple/Homebrew的安装和使用.md",
     "apple/Homebrew 配置国内镜像加速.md"
