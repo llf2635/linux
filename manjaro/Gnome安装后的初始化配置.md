@@ -68,7 +68,7 @@ echo "==========开始安装gnome相关软件=========="
 # 来自 EndeavourOS 官方文档 https://discovery.endeavouros.com/applications/flatpak-enabling-and-application-management/2021/03/
 # 国内源 https://mirror.sjtu.edu.cn/docs/flathub
 
-默认情况下，Flatpak 安装在 Manjaro 20 或更高版本上。要启用其支持，请导航到 软件管理器 （添加/删除程序）单击右侧的三行菜单 [或点，具体取决于桌面环境]，在下拉菜单中选择“首选项”导航到“Flatpak”选项卡并滑动切换开关以启用 Flatpak 支持（也可以启用更新检查，这是推荐的）。
+# 默认情况下，Flatpak 安装在 Manjaro 20 或更高版本上。要启用其支持，请导航到 软件管理器 （添加/删除程序）单击右侧的三行菜单 [或点，具体取决于桌面环境]，在下拉菜单中选择“首选项”导航到“Flatpak”选项卡并滑动切换开关以启用 Flatpak 支持（也可以启用更新检查，这是推荐的）。
 yay -S flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 sudo flatpak remote-modify flathub --url=https://mirror.sjtu.edu.cn/flathub
@@ -102,55 +102,56 @@ yay -Rcns xxx
 nautilus ~/.local/share/gnome-shell/extensions
 cd ~/.local/share/gnome-shell/extensions
 
-yay -S gnome-shell-extensions
-extra/gnome-shell-extensions
-extra/gnome-shell-extension-dash-to-dock
-extra/gnome-shell-extension-caffeine
-extra/gnome-shell-extension-vitals
-extra/gnome-shell-extension-gtk4-desktop-icons-ng
-
-aur/gnome-shell-extension-blur-my-shell
-aur/gnome-shell-extension-blur-my-shell-git
-
-aur/gnome-shell-extension-rounded-window-corners-reborn
-aur/gnome-shell-extension-rounded-window-corners-reborn-git
-
-aur/gnome-shell-extension-rounded-window-corners-git
-aur/gnome-shell-extension-compiz-alike-magic-lamp-effect-git
-aur/gnome-shell-extension-nightthemeswitcher-git
-
-aur/gnome-shell-extension-just-perfection-desktop
-aur/gnome-shell-extension-just-perfection-desktop-git
-
-aur/gnome-shell-extension-bluetooth-quick-connect
-aur/gnome-shell-extension-hidetopbar-git
-
-
-# 将应用程序搜索从概述中移除。全局搜索框，类似：search-everything
-aur/gnome-shell-extension-search-light-git
-
-clipboard-indicator@tudmotu.com
-
-compiz-windows-effect@hermes83.github.com
-wifiqrcode@glerro.pm.me
-# 根据自己的喜好配置通知横幅位置和动画。
-notification-banner-reloaded@marcinjakubowski.github.com
-
-
-SettingsCenter@lauinger-clan.de
-quick-settings-avatar@d-go
-
-extra/gnome-shell-extension-legacy-theme-auto-switcher
-yay -Rcns gnome-shell-extension-legacy-theme-auto-switcher
-aur/gnome-shell-extension-wifiqrcode-git
-yay -Rcns gnome-shell-extension-wifiqrcode-git
-logout
 
 # 查询系统中已安装的以 gnome-shell-extension 为前缀的软件包或扩展
 pacman -Q | grep '^gnome-shell-extension'
 yay -Q | grep '^gnome-shell-extension'
 # 查看所有启用的扩展
 gnome-extensions list
+# 安装 Gnome 扩展，通过 pacman、yay 安装的扩展将作为系统扩展而不是用户扩展，
+# 推荐所有 extra 官方仓库的扩展通过命令安装，而 aur 社区仓库的扩展通过 extension manager 软件安装
+pacman -Ss gnome-shell-extension
+# 安装系统扩展包集合，该集合中的扩展包无法单个删除
+yay -S gnome-shell-extensions
+extra/gnome-shell-extensions
+extra/gnome-shell-extension-dash-to-dock
+extra/gnome-shell-extension-caffeine
+extra/gnome-shell-extension-vitals
+extra/gnome-shell-extension-gtk4-desktop-icons-ng
+# 移除不要的系统扩展
+yay -Rcns gnome-shell-extension-x11gestures gnome-shell-extension-legacy-theme-auto-switcher
+aur/gnome-shell-extension-unite
+
+Alphabetical App Grid
+Bing Wallpaper
+Bluetooth Quick Connect
+Blur my Shell
+Burn My Windows
+Clipboard Indicator
+Coverflow Alt-Tab
+Compiz alike magic lamp effect
+Compiz windows effect
+Dash2Dock Animated
+ddterm
+Disconnect Wifi
+Hide Top Bar
+IBus Tweaker
+Just Perfection
+Night Theme Switcher
+Notification Banner Reloaded
+Quick Settings Tweaks
+Rounded Corners
+Rounded Window Corners Reborn
+Search Light
+SettingsCenter
+Top Bar Organizer
+Tray Icons: Reloaded
+User Avatar In Quick Settings
+Wifi QR Code
+Window Gestures
+
+logout
+
 
 
 # 全局统一GTK主题样式
@@ -169,6 +170,7 @@ https://oo-infty.netlify.app/posts/unify-look-of-linux-gui-frameworks/
 yay -S qwhitesurgtkdecorations-qt5 qwhitesurgtkdecorations-qt6
 # 将以下配置添加到用户的环境变量文件（如 ~/.bashrc 或 ~/.profile）：	
 echo 'export QT_WAYLAND_DECORATION=whitesur-gtk' >> ~/.profile
+echo 'export QT_STYLE_OVERRIDE=kvantum' >> ~/.profile
 source ~/.profile
 cat ~/.profile
 
@@ -194,21 +196,54 @@ sudo pacman -S xdg-desktop-portal
 echo "
 export GTK_THEME=WhiteSur-Dark
 export QT_WAYLAND_DECORATION=whitesur-gtk
+export GTK_USE_PORTAL=1
 " | sudo tee -a /etc/profile
+
+# 强制 GTK 应用使用主题
+# 在 ~/.profile 或 ~/.xprofile 中设置环境变量
+echo 'export GTK_THEME=WhiteSur-Dark' >> ~/.profile
+source ~/.profile
+
+# 安装 Qt 主题引擎和配置工具（Manjaro/Arch）
+sudo pacman -S qt5ct qt6ct kvantum kvantum-theme-whitesur
+#打开 qt5 配置器
+qt5ct
+# 打开 Kvantum 管理器
+kvantummanager
+
 
 yay -S libadwaita-demos
 # 可视化编辑  GSettings editor for GNOME.类似 主题、图标都可以在该软件可视化配置
 yay -S dconf-editor
 yay -S gnome-console
-yay -S libreoffice-still-zh-cn 
-yay -S jetbrains-toolbox code apifox switchhosts google-chrome
+yay -S libreoffice-still-zh-cn
+# VSCode在设置里搜索找到 titleBarStyle，改成 native
+yay -S jetbrains-toolbox visual-studio-code-bin apifox switchhosts
+# 点击    帮助 -> 编辑自定义虚拟机选项    这样就可以修改 idea64.vmoptions 配置文件了
+yay -S intellij-idea-ultimate-edition
+
+# 在 /etc/profile.d/ 下创建 jre.sh
+sudo nano /etc/profile.d/jre.sh
+# 将配置追加到 /etc/profile.d/jre.sh（适用于 Bash）
+echo 'export _JAVA_OPTIONS="-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel -Djdk.gtk.version=3 -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"' >> /etc/profile.d/jre.sh
+cat /etc/profile.d/jre.sh
+# 重新登录或重启系统
+# 或手动加载（仅当前会话生效）
+source /etc/profile
+# 查看环境变量
+echo $_JAVA_OPTIONS
+
+yay -S google-chrome
 yay -S microsoft-edge-stable-bin
 yay -S firefox firefox-i18n-zh-cn
 yay -S linuxqq wechat baidunetdisk-bin typora
 yay -S yesplaymusic tabby
+# Clash Nyanpasu 最初是从 Clash Verge 1.3.7 分支而来，是在 Clash Verge 1.3.7 的基础上进行二次开发而成的。 
+# https://nyanpasu.elaina.moe/zh-CN/
+yay -S clash-nyanpasu-bin
 yay -S vagrant virtualbox postgresql
- yay -S neofetch evolution popsicle obsidian
- evolution配置qq邮箱授权码： embwnsuwkdjrebge
+yay -S neofetch evolution popsicle obsidian
+evolution配置qq邮箱授权码： embwnsuwkdjrebge
  
 20.205.243.166	github.com
 185.199.110.133	raw.githubusercontent.com
@@ -230,6 +265,11 @@ sdk install maven
 sdk install gradle
 sdk current
 
+# asdf 多运行时版本管理器，使用一个工具管理所有运行时版本！可以管理 Python、Java、nodejs、golang、rust 等所有常见编程的版本
+# 官网 https://asdf-vm.com/zh-hans/
+
+
+
 # 安装 bun
 # curl -fsSL https://bun.sh/install | bash
 # yay -S nodejs npm
@@ -244,7 +284,7 @@ nvm ls-remote --lts
 nvm install --lts
 node --version
 npm --version
-#最新地址 淘宝 NPM 镜像站喊你切换新域名啦!
+# 最新地址 淘宝 NPM 镜像站喊你切换新域名啦!
 npm config set registry https://registry.npmmirror.com
 npm config get registry
 
@@ -271,7 +311,11 @@ bun run tauri android dev
 # 安装 go 直接打开 manjaro自带的应用商城搜索 go 并安装即可
 sudo pacman -S go
 go version
-
+# 配置 go 下载代理，解决国类无法访问 proxy.golang.org 的问题
+# 参考 https://goproxy.cn/
+echo "export GO111MODULE=on" >> ~/.profile
+echo "export GOPROXY=https://goproxy.cn" >> ~/.profile
+source ~/.profile
 
 
 
@@ -375,3 +419,8 @@ sudo fwupdmgr get-updates
 sudo fwupdmgr update
 # 查看固件更新历史记录
 sudo fwupdmgr get-history
+
+# 调整AMD CPU核显的显存，可以解决笔记本风扇经常高速转动导致的机身发热和噪音
+重启开机快按Esc进入BIOS，选到第5个Setup Utility，进入后选第4个AMD CBS，来到右侧的NBIO Common Options，
+再进入第1个GFX Configuration，进入后看到UMA Frame buffer Size。
+默认情况它设置的是1G，我们按右方向键修改为最大的4G。 按F10保存并退出，重启后专用GPU内存变为4G了，常规内存为27G。
