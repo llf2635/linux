@@ -125,11 +125,11 @@ gsettings list-recursively org.gnome.shell.extensions.burn-my-windows
 # 参考官方解决方案  https://github.com/vinceliuice/WhiteSur-gtk-theme/issues/1059
 # Night Theme Switcher 扩展插件配置
 # 白天执行命令
-gsettings set org.gnome.desktop.interface color-scheme prefer-light
-gsettings set org.gnome.desktop.interface cursor-theme "WhiteSur-cursors"
-gsettings set org.gnome.desktop.interface icon-theme "WhiteSur-light"
-gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-Light"
-gsettings set org.gnome.shell.extensions.user-theme name "WhiteSur-Light"
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+gsettings set org.gnome.desktop.interface cursor-theme 'WhiteSur-cursors'
+gsettings set org.gnome.desktop.interface icon-theme 'WhiteSur-light'
+gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Light'
+gsettings set org.gnome.shell.extensions.user-theme name 'WhiteSur-Light'
 gsettings set org.gnome.desktop.wm.preferences theme 'WhiteSur-Light'
 gsettings set org.gnome.shell.extensions.dash-to-dock background-color 'rgb(255,255,255)'
 gsettings set org.gnome.shell.extensions.blur-my-shell.panel style-panel 1
@@ -139,11 +139,11 @@ gsettings set org.gnome.shell.extensions.blur-my-shell.dash-to-dock style-dash-t
 ln -fs $HOME/.config/gtk-4.0/gtk-Light.css $HOME/.config/gtk-4.0/gtk.css
 
 # 夜晚执行命令
-gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-gsettings set org.gnome.desktop.interface cursor-theme "WhiteSur-cursors"
-gsettings set org.gnome.desktop.interface icon-theme "WhiteSur-dark"
-gsettings set org.gnome.desktop.interface gtk-theme "WhiteSur-Dark"
-gsettings set org.gnome.shell.extensions.user-theme name "WhiteSur-Dark"
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface cursor-theme 'WhiteSur-cursors'
+gsettings set org.gnome.desktop.interface icon-theme 'WhiteSur-dark'
+gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Dark'
+gsettings set org.gnome.shell.extensions.user-theme name 'WhiteSur-Dark'
 gsettings set org.gnome.desktop.wm.preferences theme 'WhiteSur-Dark'
 gsettings set org.gnome.shell.extensions.dash-to-dock background-color 'rgb(119,118,123)'
 gsettings set org.gnome.shell.extensions.blur-my-shell.panel style-panel 2
