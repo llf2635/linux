@@ -28,17 +28,18 @@ yay -S popsicle extension-manager vim
 gsettings get org.gnome.mutter experimental-features
 gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
 
-git config --global user.name "龙茶清欢"
-git config --global user.email "2320391937@qq.com"
-ssh-keygen -t rsa -b 4096 -C "2320391937@qq.com"
-cat ~/.ssh/id_rsa.pub
-
 # 推荐直接使用系统自带的  ibus 输入法，如果感觉不行再切换到  fcitx5
 # 参考：https://www.cnblogs.com/fatalord/p/13850072.html
 sudo pacman -S manjaro-asian-input-support-ibus
 sudo pacman -Rcns $(pacman -Qsq fcitx)
 # 安装 fcitx5 输入法, https://zhuanlan.zhihu.com/p/597197721
 yay -S manjaro-asian-input-support-fcitx5 fcitx5-chinese-addons fcitx5-configtool
+
+git config --global user.name "龙茶清欢"
+git config --global user.email "2320391937@qq.com"
+ssh-keygen -t rsa -b 4096 -C "2320391937@qq.com"
+cat ~/.ssh/id_rsa.pub
+
 
 # 安装系统主题
 yay -S whitesur-gtk-theme whitesur-icon-theme whitesur-cursor-theme
@@ -108,7 +109,7 @@ pacman -Q | grep '^gnome-shell-extension'
 yay -Q | grep '^gnome-shell-extension'
 # 查看所有启用的扩展
 gnome-extensions list
-# 安装 Gnome 扩展，通过 pacman、yay 安装的扩展将作为系统扩展而不是用户扩展，
+# 安装 Gnome 扩展，通过 yay 安装的扩展将作为系统扩展而不是用户扩展，系统扩展可以使用 gsettings 命令来操作插件，而用户插件则不行
 # 推荐所有 extra 官方仓库的扩展通过命令安装，而 aur 社区仓库的扩展通过 extension manager 软件安装
 pacman -Ss gnome-shell-extension
 # 安装系统扩展包集合，该集合中的扩展包无法单个删除
@@ -318,7 +319,7 @@ echo "export GOPROXY=https://goproxy.cn" >> ~/.profile
 source ~/.profile
 
 
-
+# 通过 yay 安装的扩展将作为系统扩展而不是用户扩展，系统扩展才拥有 Schema 可以使用 gsettings 命令来操作插件，而用户插件则不行
 # 列出所有已安装的 Schema
 gsettings list-schemas
 # 列出某个 Schema 下的所有键
@@ -327,6 +328,8 @@ gsettings list-keys org.gnome.desktop.interface
 gsettings describe org.gnome.desktop.interface font-name
 # 递归列出某个 Schema 的键值（例如 org.gnome.desktop.interface）
 gsettings list-recursively org.gnome.desktop.interface
+gsettings list-recursively org.gnome.shell.extensions.dash-to-dock
+
 
 # 参考官方解决方案  https://github.com/vinceliuice/WhiteSur-gtk-theme/issues/1059
 # Night Theme Switcher 扩展插件配置
