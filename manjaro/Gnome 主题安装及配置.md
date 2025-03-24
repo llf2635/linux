@@ -11,9 +11,17 @@ cd WhiteSur-gtk-theme
 # 安装的 flat Firefox 主题
 ./tweaks.sh -f flat
 # 安装 GDM 主题，使用默认的背景
-sudo ./tweaks.sh -g
+sudo ./tweaks.sh -g    # use the default background
+sudo ./tweaks.sh -g -b "/home/lcqh/图片/BingWallpaper/47482bcb3a294e868546d6c73f1e7ca8.jpg"
+sudo ./tweaks.sh -g -b default          
 
 sudo flatpak override --filesystem=xdg-config/gtk-3.0 && sudo flatpak override --filesystem=xdg-config/gtk-4.0
+
+
+# 安装 WhiteSur 壁纸
+git clone https://github.com/vinceliuice/WhiteSur-wallpapers.git
+sudo ./install-gnome-backgrounds.sh
+./install-wallpapers.sh
 
 
 # 全局统一GTK主题样式

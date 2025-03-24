@@ -87,7 +87,7 @@ gsettings set org.gnome.shell.extensions.dash-to-dock scroll-action 'cycle-windo
 gsettings set org.gnome.shell.extensions.dash-to-dock custom-theme-shrink true
 gsettings set org.gnome.shell.extensions.dash-to-dock running-indicator-style 'DASHES'
 gsettings set org.gnome.shell.extensions.dash-to-dock running-indicator-dominant-color true
-gsettings set org.gnome.shell.extensions.dash-to-dock background-color 'rgb(255,255,255)'
+gsettings set org.gnome.shell.extensions.dash-to-dock background-color 'rgb(154,153,150)'
 gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode 'FIXED'
 
 yay -S --noconfirm gnome-shell-extension-blur-my-shell
@@ -118,6 +118,12 @@ gsettings set org.gnome.shell.extensions.hidetopbar enable-intellihide true
 gsettings set org.gnome.shell.extensions.hidetopbar enable-active-window false
 
 
+yay -S --noconfirm gnome-shell-extension-gtk4-desktop-icons-ng
+gsettings list-recursively org.gnome.shell.extensions.gtk4-ding
+org.gnome.shell.extensions.gtk4-ding show-home true
+org.gnome.shell.extensions.gtk4-ding show-trash false
+Gnome 环境安装常用软件
+
 yay -S --noconfirm gnome-shell-extension-burn-my-windows
 gsettings list-recursively org.gnome.shell.extensions.burn-my-windows
 
@@ -128,10 +134,10 @@ gsettings list-recursively org.gnome.shell.extensions.burn-my-windows
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
 gsettings set org.gnome.desktop.interface cursor-theme 'WhiteSur-cursors'
 gsettings set org.gnome.desktop.interface icon-theme 'WhiteSur-light'
-gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Light'
 gsettings set org.gnome.shell.extensions.user-theme name 'WhiteSur-Light'
+gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Light'
 gsettings set org.gnome.desktop.wm.preferences theme 'WhiteSur-Light'
-gsettings set org.gnome.shell.extensions.dash-to-dock background-color 'rgb(255,255,255)'
+gsettings set org.gnome.shell.extensions.dash-to-dock background-color 'rgb(154,153,150)'
 gsettings set org.gnome.shell.extensions.blur-my-shell.panel style-panel 1
 gsettings set org.gnome.shell.extensions.blur-my-shell.overview style-components 1
 gsettings set org.gnome.shell.extensions.blur-my-shell.appfolder style-dialogs 2
@@ -142,8 +148,8 @@ ln -fs $HOME/.config/gtk-4.0/gtk-Light.css $HOME/.config/gtk-4.0/gtk.css
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface cursor-theme 'WhiteSur-cursors'
 gsettings set org.gnome.desktop.interface icon-theme 'WhiteSur-dark'
-gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Dark'
 gsettings set org.gnome.shell.extensions.user-theme name 'WhiteSur-Dark'
+gsettings set org.gnome.desktop.interface gtk-theme 'WhiteSur-Dark'
 gsettings set org.gnome.desktop.wm.preferences theme 'WhiteSur-Dark'
 gsettings set org.gnome.shell.extensions.dash-to-dock background-color 'rgb(119,118,123)'
 gsettings set org.gnome.shell.extensions.blur-my-shell.panel style-panel 2
@@ -192,6 +198,7 @@ gsettings list-keys org.gnome.mutter
 gsettings list-recursively org.gnome.mutter
 gsettings list-recursively org.gnome.desktop.interface
 gsettings list-recursively org.gnome.desktop.wm.preferences
+gsettings set org.gnome.desktop.wm.preferences workspace-names ['休闲区','工作区']
 
 
 # 查看当前BIOS信息，
