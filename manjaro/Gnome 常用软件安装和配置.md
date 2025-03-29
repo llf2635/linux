@@ -28,7 +28,6 @@ yay -S <package_name> --noconfirm
 
 
 yay -S dconf-editor
-yay -S gnome-console
 yay -S libreoffice-still-zh-cn
 
 # VSCode在设置里搜索找到 titleBarStyle，改成 native
@@ -85,10 +84,20 @@ evolution配置qq邮箱授权码： embwnsuwkdjrebge
 
 # 安装的 rust 自带 cargo 包管理工具    
 
-# curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+# 编辑或创建 ~/.bashrc / ~/.zshrc / ~/.profile
+echo 'export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static' >> ~/.bashrc
+echo 'export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup' >> ~/.bashrc
+source ~/.bashrc  # 使配置生效
 
 sudo pacman -S rust
 source "$HOME/.cargo/env"
+
+
+
+# 安装 nightly 工具链
+rustup install nightly
+# 在项目目录中设置使用 nightly
+rustup override set nightly
 
 # 安装 sdkman 工具
 
@@ -170,11 +179,9 @@ bun run tauri android dev
 
 sudo pacman -S go
 go version
-
-# 配置 go 下载代理，解决国类无法访问 proxy.golang.org 的问题
-
-# 参考 https://goproxy.cn/
-
-echo "export GO111MODULE=on" >> ~/.profile
-echo "export GOPROXY=https://goproxy.cn" >> ~/.profile
-source ~/.profile
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin:$GOBIN
+配置代理
+go env -w GOPROXY=https://goproxy.cn,direct
+go env
